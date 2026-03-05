@@ -1,423 +1,251 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maryland Deed Preparation | Law Office of Gregory C. Reynolds</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="description" content="Maryland deed preparation attorney. Deed modifications, add or remove a spouse from a deed, life estate deeds, family transfer deeds, corrective deeds. Call 443-223-0269." />
-  <meta name="robots" content="index,follow" />
+<title>Maryland Deed Preparation | Law Office of Gregory C. Reynolds</title>
 
-  <style>
-    :root{
-      --ink:#0b0b0d;
-      --panel:rgba(18,18,22,.82);
-      --text:#f2f2f4;
-      --muted:#c7c7ce;
-      --gold:#caa85a;
-      --line:rgba(255,255,255,.14);
-      --shadow:0 18px 50px rgba(0,0,0,.45);
-      --radius:20px;
-    }
+<meta name="description" content="Maryland deed preparation attorney. Add or remove a spouse from deed, life estate deeds, family transfer deeds, corrective deeds." />
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      color:var(--text);
-      background:
-        radial-gradient(1100px 680px at 12% 10%, rgba(202,168,90,.14), transparent 60%),
-        radial-gradient(900px 520px at 85% 20%, rgba(84,130,255,.12), transparent 55%),
-        linear-gradient(180deg, #060607 0%, #0b0b0d 55%, #09090b 100%);
-    }
+<style>
 
-    a{color:inherit; text-decoration:none}
+body{
+margin:0;
+font-family:system-ui,Segoe UI,Roboto,Helvetica,Arial;
+background:#0b0b0d;
+color:white;
+}
 
-    /* Optional content width limiter (used below hero) */
-    .wrap{max-width:1180px; margin:0 auto; padding:0 18px}
+/* ===== HEADER ===== */
 
-    /* ===== TOP BAR (full width) ===== */
-    header{
-      position:sticky;
-      top:0;
-      z-index:50;
-      backdrop-filter: blur(10px);
-      background: rgba(10,10,12,.65);
-      border-bottom:1px solid var(--line);
-    }
-    .topbar{
-      width:100%;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:12px 22px; /* full-width padding */
-      gap:14px;
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      min-width:240px;
-    }
-    .brand img{
-      height:44px;
-      width:auto;
-      display:block;
-      filter: drop-shadow(0 10px 18px rgba(0,0,0,.35));
-    }
-    .brand .name{
-      line-height:1.05;
-      font-weight:700;
-      letter-spacing:.2px;
-      font-size:15px;
-      opacity:.95;
-      display:none;
-    }
-    @media (min-width: 860px){
-      .brand .name{display:block;}
-    }
+header{
+position:absolute;
+top:0;
+width:100%;
+z-index:10;
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-    .phone{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:800;
-      white-space:nowrap;
-    }
-    .phone a{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 14px;
-      border-radius:999px;
-      background: linear-gradient(180deg, rgba(202,168,90,.20), rgba(202,168,90,.08));
-      border:1px solid rgba(202,168,90,.35);
-      box-shadow: 0 14px 30px rgba(0,0,0,.35);
-    }
-    .phone small{
-      font-weight:600;
-      color:var(--muted);
-      display:none;
-    }
-    @media (min-width: 860px){
-      .phone small{display:inline}
-    }
+header img{
+height:42px;
+}
 
-    /* ===== HERO (FULL BLEED, LEFT-TO-RIGHT) ===== */
-    .hero{
-      position:relative;
-      width:100%;
-      /* gives it that big “law firm hero” feel */
-      min-height:72vh;
-      max-height:860px;
-    }
+.phone{
+background:#111;
+padding:10px 16px;
+border-radius:20px;
+font-weight:700;
+border:1px solid rgba(255,255,255,.2);
+}
 
-    .hero img{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      display:block;
-      transform: scale(1.03);
-    }
+/* ===== HERO IMAGE ===== */
 
-    /* dark gradient overlay for readability (this is the “2-line trick,” built in) */
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(90deg,
-          rgba(0,0,0,.78) 0%,
-          rgba(0,0,0,.48) 42%,
-          rgba(0,0,0,.22) 68%,
-          rgba(0,0,0,.12) 100%);
-      pointer-events:none;
-    }
+.hero{
+position:relative;
+height:70vh;
+min-height:520px;
+overflow:hidden;
+}
 
-    /* a tiny vignette to make it look more premium */
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background: radial-gradient(800px 520px at 25% 65%, rgba(0,0,0,.10), rgba(0,0,0,.55));
-      mix-blend-mode: multiply;
-      pointer-events:none;
-      opacity:.55;
-    }
+.hero img{
+position:absolute;
+width:100%;
+height:100%;
+object-fit:cover;
+}
 
-    .hero-inner{
-      position:relative;
-      height:100%;
-      display:flex;
-      align-items:flex-end;
-      /* keep the text block aligned with your content width, while image stays full-bleed */
-      max-width:1180px;
-      margin:0 auto;
-      padding: 0 18px 34px;
-    }
+/* dark gradient for readability */
 
-    .hero-box{
-      max-width:760px;
-      background: rgba(8,8,10,.40);
-      border:1px solid rgba(255,255,255,.12);
-      border-radius: 22px;
-      padding:18px 18px 16px;
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-    }
+.hero:after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(
+to bottom,
+rgba(0,0,0,.55),
+rgba(0,0,0,.15) 40%,
+rgba(0,0,0,.65)
+);
+}
 
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-weight:900;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-size:12px;
-      color:rgba(242,242,244,.86);
-    }
-    .kicker .dot{
-      width:8px; height:8px; border-radius:99px;
-      background: var(--gold);
-      box-shadow: 0 0 0 4px rgba(202,168,90,.18);
-    }
+/* ===== HERO TEXT ===== */
 
-    h1{
-      margin:10px 0 8px;
-      font-size: clamp(30px, 4vw, 52px);
-      line-height:1.05;
-      letter-spacing:-.02em;
-    }
-    h1 em{
-      font-style:normal;
-      color:var(--gold);
-    }
+.hero-text{
+position:absolute;
+top:110px;
+width:100%;
+text-align:center;
+z-index:2;
+padding:0 20px;
+}
 
-    .sub{
-      margin:0 0 14px;
-      color: rgba(199,199,206,.96);
-      font-size: 15.5px;
-      line-height:1.45;
-      max-width:64ch;
-    }
+.hero-text h1{
+font-size:48px;
+margin:0;
+font-weight:800;
+letter-spacing:-.02em;
+}
 
-    .actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:10px;
-    }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:10px 14px;
-      border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(18,18,22,.55);
-      color: var(--text);
-      font-weight:900;
-    }
-    .btn.primary{
-      background: linear-gradient(180deg, rgba(202,168,90,.28), rgba(202,168,90,.12));
-      border-color: rgba(202,168,90,.45);
-    }
-    .btn:hover{filter:brightness(1.05)}
-    .btn:active{transform: translateY(1px)}
+.hero-text span{
+color:#caa85a;
+}
 
-    /* ===== BELOW HERO (kept clean, not busy) ===== */
-    main{
-      padding: 18px 0 44px;
-    }
-    .below{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:16px;
-      align-items:start;
-    }
-    @media (max-width: 980px){
-      .below{grid-template-columns: 1fr;}
-      .hero-inner{padding-bottom:24px;}
-      .hero{min-height:66vh;}
-    }
+.hero-text p{
+margin-top:14px;
+font-size:17px;
+opacity:.9;
+}
 
-    .panel{
-      background: var(--panel);
-      border:1px solid rgba(255,255,255,.10);
-      border-radius: var(--radius);
-      padding:18px;
-      box-shadow: 0 16px 34px rgba(0,0,0,.28);
-    }
-    .panel h2{
-      margin:0 0 8px;
-      font-size:18px;
-      letter-spacing:-.01em;
-    }
-    .panel p{
-      margin:0;
-      color: rgba(199,199,206,.95);
-      line-height:1.55;
-      font-size: 14.8px;
-    }
+.buttons{
+margin-top:22px;
+}
 
-    .list{
-      margin:12px 0 0;
-      padding:0;
-      list-style:none;
-      display:grid;
-      gap:10px;
-    }
-    .list li{
-      display:flex;
-      gap:10px;
-      align-items:flex-start;
-      padding:12px 12px;
-      border-radius:14px;
-      background: rgba(18,18,22,.45);
-      border:1px solid rgba(255,255,255,.10);
-    }
-    .badge{
-      width:30px; height:30px;
-      border-radius:10px;
-      display:flex; align-items:center; justify-content:center;
-      background: rgba(202,168,90,.18);
-      border:1px solid rgba(202,168,90,.35);
-      flex:0 0 auto;
-      font-weight:900;
-      color: var(--gold);
-    }
-    .li-text b{display:block; font-size:14.5px; margin-bottom:2px}
-    .li-text span{color: rgba(199,199,206,.92); font-size:13.8px; line-height:1.35}
+.btn{
+display:inline-block;
+padding:12px 20px;
+margin:6px;
+border-radius:8px;
+font-weight:700;
+text-decoration:none;
+}
 
-    footer{
-      border-top:1px solid var(--line);
-      color: rgba(199,199,206,.8);
-      padding:18px 0 26px;
-      font-size:12.5px;
-    }
-    footer .row{
-      display:flex;
-      gap:10px;
-      justify-content:space-between;
-      flex-wrap:wrap;
-    }
-  </style>
+.call{
+background:#caa85a;
+color:#000;
+}
+
+.email{
+border:1px solid white;
+}
+
+/* ===== LOWER SECTION ===== */
+
+main{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.panel{
+background:#151518;
+padding:24px;
+border-radius:10px;
+}
+
+.panel h2{
+margin-top:0;
+}
+
+.panel ul{
+padding-left:18px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+opacity:.6;
+font-size:13px;
+}
+
+@media(max-width:900px){
+
+.hero-text h1{
+font-size:36px;
+}
+
+main{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
 </head>
 
 <body>
-  <!--
-    Put these files in the SAME folder as this index.html:
-      - iconNEW.png            (your logo)
-      - baltimore harbour.png  (your Inner Harbor image)
-  -->
 
-  <header>
-    <div class="topbar">
-      <div class="brand">
-        <img src="iconNEW.png" alt="Law Office of Gregory C. Reynolds" />
-        <div class="name">
-          Law Office of<br/>Gregory C. Reynolds
-        </div>
-      </div>
+<header>
 
-      <div class="phone">
-        <small>Call now:</small>
-        <a href="tel:4432230269" aria-label="Call 443-223-0269">443-223-0269</a>
-      </div>
-    </div>
-  </header>
+<img src="iconNEW.png">
 
-  <!-- FULL-WIDTH HERO -->
-  <section class="hero" aria-label="Baltimore Inner Harbor hero image">
-    <img src="baltimore harbour.png" alt="Baltimore Inner Harbor" />
-    <div class="hero-inner">
-      <div class="hero-box">
-        <div class="kicker"><span class="dot"></span> The Official Maryland Deed Hub</div>
-        <h1>Maryland <em>Deed</em> Preparation & Modifications</h1>
-        <p class="sub">
-          Straightforward, attorney-prepared deed changes for Maryland property owners—focused on getting it done correctly,
-          and getting it recorded.
-        </p>
-        <div class="actions">
-          <a class="btn primary" href="tel:4432230269">Call 443-223-0269</a>
-          <a class="btn" href="mailto:gregory.reynolds@comcast.net">Email</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="phone">
+Call 443-223-0269
+</div>
 
-  <main>
-    <div class="wrap">
-      <div class="below">
-        <div class="panel">
-          <h2>What we handle</h2>
-          <p>
-            If you need to change a deed in Maryland—adding or removing a spouse from a deed, making a family transfer,
-            correcting an error, or setting up a life estate deed—we prepare the deed and supporting paperwork
-            so it’s ready for recording.
-            This page stays intentionally simple; detailed explanations will live on the section pages you’ll click into.
-          </p>
+</header>
 
-          <!-- Light SEO, not spammy -->
-          <p style="margin-top:10px;">
-            Common searches we help with: <b>Maryland deed modification</b>, <b>add spouse to deed Maryland</b>,
-            <b>remove spouse from deed Maryland</b>, <b>life estate deed Maryland</b>, <b>family transfer deed Maryland</b>,
-            and <b>corrective deed</b>.
-          </p>
-        </div>
 
-        <div class="panel">
-          <h2>Popular deed services</h2>
-          <ul class="list">
-            <li>
-              <div class="badge">1</div>
-              <div class="li-text">
-                <b>Add or remove a spouse</b>
-                <span>Marriage, divorce, refinancing, or updating ownership.</span>
-              </div>
-            </li>
-            <li>
-              <div class="badge">2</div>
-              <div class="li-text">
-                <b>Family transfers</b>
-                <span>Parents to children, children to parents, and other intra-family conveyances.</span>
-              </div>
-            </li>
-            <li>
-              <div class="badge">3</div>
-              <div class="li-text">
-                <b>Life estate deeds</b>
-                <span>Keep control during life, with a clear plan for what happens at death.</span>
-              </div>
-            </li>
-            <li>
-              <div class="badge">4</div>
-              <div class="li-text">
-                <b>Corrective deeds</b>
-                <span>Fix names, legal descriptions, or other errors that can cause title problems.</span>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </main>
+<section class="hero">
 
-  <footer>
-    <div class="wrap">
-      <div class="row">
-        <div>© <span id="y"></span> Law Office of Gregory C. Reynolds • Maryland</div>
-        <div>Email: <a href="mailto:gregory.reynolds@comcast.net">gregory.reynolds@comcast.net</a></div>
-      </div>
-    </div>
-  </footer>
+<img src="baltimore harbour.png">
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<div class="hero-text">
+
+<h1>Maryland <span>Deed</span> Preparation & Modifications</h1>
+
+<p>
+Attorney prepared deed changes for Maryland property owners.
+Add or remove a spouse from deed, life estate deeds, family transfers, and corrective deeds.
+</p>
+
+<div class="buttons">
+<a class="btn call" href="tel:4432230269">Call 443-223-0269</a>
+<a class="btn email" href="mailto:gregory.reynolds@comcast.net">Email</a>
+</div>
+
+</div>
+
+</section>
+
+
+<main>
+
+<div class="panel">
+
+<h2>Maryland Deed Preparation</h2>
+
+<p>
+If you need to change a deed in Maryland, an attorney prepared deed can ensure the
+transfer is completed correctly and recorded properly with the county land records.
+</p>
+
+<p>
+Common reasons property owners modify deeds include marriage, divorce, estate planning,
+family transfers, and correcting errors in previously recorded deeds.
+</p>
+
+</div>
+
+
+<div class="panel">
+
+<h2>Common Deed Services</h2>
+
+<ul>
+<li>Add spouse to deed</li>
+<li>Remove spouse from deed</li>
+<li>Life estate deeds</li>
+<li>Family transfer deeds</li>
+<li>Corrective deeds</li>
+</ul>
+
+</div>
+
+</main>
+
+
+<footer>
+
+© 2026 Law Office of Gregory C. Reynolds
+
+</footer>
+
 </body>
 </html>
-```
