@@ -1,3 +1,4 @@
+```html
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,12 +11,14 @@
   <style>
     :root{
       --bg:#0b0b0d;
-      --panel:rgba(18,18,22,.82);
-      --panel2:rgba(18,18,22,.66);
+
+      /* Panels slightly more transparent so the background shows through */
+      --panel:rgba(18,18,22,.70);
+      --panel2:rgba(18,18,22,.58);
+
       --text:#f2f2f4;
       --muted:#c7c7ce;
       --gold:#caa85a;
-      --gold2:#8f7337;
       --line:rgba(202,168,90,.22);
       --shadow: 0 18px 50px rgba(0,0,0,.55);
       --radius: 18px;
@@ -27,14 +30,15 @@
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 800px at 20% 10%, rgba(202,168,90,.12), transparent 55%),
-                  radial-gradient(900px 600px at 85% 40%, rgba(202,168,90,.10), transparent 60%),
-                  var(--bg);
+      background:
+        radial-gradient(1200px 800px at 20% 10%, rgba(202,168,90,.14), transparent 55%),
+        radial-gradient(900px 600px at 85% 40%, rgba(202,168,90,.12), transparent 60%),
+        var(--bg);
       color:var(--text);
       overflow-x:hidden;
     }
 
-    /* FULL-SCREEN WATERMARK BACKGROUND */
+    /* FULL-SCREEN WATERMARK BACKGROUND (more visible) */
     .watermark{
       position:fixed;
       inset:0;
@@ -43,22 +47,25 @@
       align-items:center;
       justify-content:center;
       pointer-events:none;
-      opacity:.10; /* make lighter/darker here */
-      filter: saturate(1.05) contrast(1.05);
+
+      /* ↑ Increase this to show more logo */
+      opacity:.18;
+
+      filter: saturate(1.1) contrast(1.1) blur(.15px);
     }
     .watermark img{
-      width:min(1200px, 120vw);
+      width:min(1400px, 135vw);
       height:auto;
       transform: rotate(-8deg);
       opacity:1;
     }
 
-    /* subtle dark veil so text pops */
+    /* Lighter veil so watermark is visible but text still reads clean */
     .veil{
       position:fixed;
       inset:0;
       z-index:-1;
-      background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.75));
+      background: linear-gradient(180deg, rgba(0,0,0,.34), rgba(0,0,0,.58));
       pointer-events:none;
     }
 
@@ -87,19 +94,18 @@
       width:36px;
       height:36px;
       border-radius:10px;
-      background: rgba(202,168,90,.10);
+      background: rgba(202,168,90,.12);
       border:1px solid var(--line);
       display:grid;
       place-items:center;
       overflow:hidden;
+      backdrop-filter: blur(6px);
     }
     .brand .mini img{ width:26px; height:26px; object-fit:contain; }
 
-    .brand .textblock{
-      line-height:1.05;
-    }
+    .brand .textblock{ line-height:1.05; }
     .brand .name{
-      font-weight:700;
+      font-weight:800;
       letter-spacing:.2px;
       font-size: 15px;
     }
@@ -122,21 +128,22 @@
       padding: 11px 14px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(18,18,22,.60);
+      background: rgba(18,18,22,.52);
       color: var(--text);
       text-decoration:none;
       box-shadow: 0 10px 24px rgba(0,0,0,.35);
-      font-weight:650;
+      font-weight:750;
       font-size: 14px;
       letter-spacing:.1px;
       transition: transform .12s ease, background .12s ease;
+      backdrop-filter: blur(8px);
     }
-    .btn:hover{ transform: translateY(-1px); background: rgba(18,18,22,.78); }
+    .btn:hover{ transform: translateY(-1px); background: rgba(18,18,22,.70); }
     .btn.primary{
-      border-color: rgba(202,168,90,.40);
-      background: linear-gradient(180deg, rgba(202,168,90,.18), rgba(202,168,90,.08));
+      border-color: rgba(202,168,90,.45);
+      background: linear-gradient(180deg, rgba(202,168,90,.22), rgba(202,168,90,.10));
     }
-    .btn small{ color: var(--muted); font-weight:600; }
+    .btn small{ color: var(--muted); font-weight:650; }
 
     .hero{
       display:grid;
@@ -151,11 +158,12 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 22px;
+      backdrop-filter: blur(10px);
     }
 
     .hero h1{
       margin:0 0 10px;
-      font-size: clamp(28px, 3.2vw, 42px);
+      font-size: clamp(30px, 3.2vw, 44px);
       letter-spacing:.2px;
       line-height:1.06;
     }
@@ -164,7 +172,7 @@
       color: var(--muted);
       font-size: clamp(16px, 1.45vw, 19px);
       line-height:1.45;
-      max-width: 60ch;
+      max-width: 62ch;
     }
 
     .tagline{
@@ -174,13 +182,13 @@
       margin: 12px 0 18px;
     }
     .pill{
-      border:1px solid rgba(202,168,90,.28);
-      background: rgba(0,0,0,.22);
+      border:1px solid rgba(202,168,90,.30);
+      background: rgba(0,0,0,.18);
       color: #f3e7c5;
       padding: 8px 10px;
       border-radius:999px;
       font-size: 13px;
-      font-weight:650;
+      font-weight:750;
     }
 
     .quicklist{
@@ -218,7 +226,7 @@
       width:100%;
       border-radius: 14px;
       border: 1px solid rgba(202,168,90,.18);
-      background: rgba(0,0,0,.25);
+      background: rgba(0,0,0,.22);
       padding: 14px;
       display:grid;
       place-items:center;
@@ -266,13 +274,12 @@
       line-height: 1.45;
     }
 
-    /* responsive */
     @media (max-width: 900px){
       header{ align-items:flex-start; flex-direction:column; }
       .top-cta{ justify-content:flex-start; }
       .hero{ grid-template-columns: 1fr; }
       .grid2{ grid-template-columns: 1fr; }
-      .watermark img{ width: 140vw; transform: rotate(-10deg); }
+      .watermark img{ width: 160vw; transform: rotate(-10deg); }
     }
   </style>
 </head>
@@ -280,7 +287,6 @@
 <body>
   <!-- watermark background -->
   <div class="watermark">
-    <!-- MUST match filename exactly in repo root -->
     <img src="IconNEW.png" alt="">
   </div>
   <div class="veil"></div>
@@ -294,7 +300,7 @@
         </div>
         <div class="textblock">
           <div class="name">Law Office of Gregory C. Reynolds</div>
-          <div class="sub">Maryland Deed Hub • Deed Preparation • Deed Drafting • Recording Support</div>
+          <div class="sub">Maryland Deed Preparation • Life Estate Deeds • Family Transfers • Corrective Deeds</div>
         </div>
       </div>
 
@@ -308,14 +314,14 @@
       <div class="card">
         <h1>Need to change a deed in Maryland?</h1>
         <p class="lede">
-          I focus on <strong>Maryland deed preparation</strong> for people who need a clean, fast solution:
-          <strong>add or remove a spouse from a deed</strong>, handle <strong>family transfers</strong>, create a
-          <strong>life estate deed</strong>, or fix a problem with a <strong>corrective deed</strong>.
+          Clean, fast <strong>Maryland deed preparation</strong> when you need it done right:
+          <strong>add or remove a name</strong>, handle a <strong>family transfer</strong>, create a
+          <strong>life estate deed</strong>, or fix an issue with a <strong>corrective deed</strong>.
         </p>
 
         <div class="tagline">
-          <span class="pill">Add spouse to deed (Maryland)</span>
-          <span class="pill">Remove spouse / remove name</span>
+          <span class="pill">Add spouse to deed</span>
+          <span class="pill">Remove name / remove spouse</span>
           <span class="pill">Life estate deed</span>
           <span class="pill">Family transfer deed</span>
           <span class="pill">Corrective deed</span>
@@ -323,9 +329,9 @@
         </div>
 
         <ul class="quicklist">
-          <li><span class="dot"></span><div><strong>Call or email</strong> with the property address + what you want to do.</div></li>
-          <li><span class="dot"></span><div><strong>I draft the deed</strong>, send it for signature, and handle the next steps.</div></li>
-          <li><span class="dot"></span><div><strong>Recording support</strong> once signatures are complete (Maryland land records).</div></li>
+          <li><span class="dot"></span><div><strong>Call or email</strong> the property address + what you want to do.</div></li>
+          <li><span class="dot"></span><div><strong>I draft the deed</strong> and send clear signature instructions.</div></li>
+          <li><span class="dot"></span><div><strong>Optional recording support</strong> after signatures are complete (Maryland land records).</div></li>
         </ul>
 
         <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
@@ -336,23 +342,21 @@
         <footer>
           <strong>Search terms people actually use:</strong>
           “change deed Maryland”, “deed preparation Maryland”, “deed drafting Maryland”, “add spouse to deed Maryland”,
-          “remove spouse from deed Maryland”, “remove name from deed Maryland”, “life estate deed Maryland”,
+          “remove name from deed Maryland”, “remove spouse from deed Maryland”, “life estate deed Maryland”,
           “family transfer deed Maryland”, “corrective deed Maryland”, “quitclaim deed Maryland”, “transfer deed to LLC Maryland”.
           <br><br>
-          (We’re using the real words on purpose — not hidden keywords — and we’ll build separate pages for each service next.)
+          (Homepage stays clean and magnetic. We’ll build separate service pages next.)
         </footer>
       </div>
 
       <div class="card logoCard">
         <div class="biglogo">
-          <!-- MUST match filename exactly in repo root -->
           <img src="NewFinal_Colour.jpeg" alt="Law Office of Gregory C. Reynolds logo">
         </div>
 
         <div class="cred">
           Deed work is performed by the <strong>Law Office of Gregory C. Reynolds</strong>.
-          Gregory C. Reynolds also serves as a settlement attorney with <strong>Lakeside Title</strong> (credibility mention only);
-          deed services on this site are handled solely through his law practice.
+          Maryland real estate attorney providing deed drafting and deed-prep guidance for common ownership changes.
         </div>
       </div>
     </section>
@@ -361,7 +365,7 @@
       <div class="card">
         <h2>Deed services I handle</h2>
         <p>
-          Life estate deeds (Maryland), adding a spouse to a deed, removing a spouse from a deed,
+          Life estate deeds (Maryland), adding a spouse to a deed, removing a spouse or other owner,
           family property transfers, deeds to and from LLCs (including single-member LLC situations),
           quitclaim deeds when appropriate, and corrective deeds to fix errors (names, legal description, prior deed issues).
         </p>
@@ -381,3 +385,4 @@
   </div>
 </body>
 </html>
+```
