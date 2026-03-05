@@ -3,51 +3,363 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gregory C. Reynolds | Maryland Real Estate Attorney</title>
+  <title>Maryland Deed Preparation | Law Office of Gregory C. Reynolds</title>
+  <meta name="description" content="Maryland deed preparation and deed drafting: add/remove spouse from deed, family transfers, life estate deeds, corrective deeds. Call 443-223-0269 or email gregory.reynolds@comcast.net." />
+  <meta name="robots" content="index,follow" />
+
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      margin: 0;
-      background: #f8f9fa;
-      color: #222;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    :root{
+      --bg:#0b0b0d;
+      --card:#121217;
+      --ink:#f2f2f2;
+      --muted:#b9b9c0;
+      --gold:#d5b46a;
+      --gold2:#a97f2a;
+      --line:rgba(255,255,255,.08);
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+      --max: 1080px;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     }
-    .card {
-      background: white;
-      padding: 40px;
+
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; padding:0; background: radial-gradient(1100px 650px at 20% 0%, rgba(213,180,106,.12), transparent 60%),
+                                      radial-gradient(900px 550px at 90% 20%, rgba(169,127,42,.10), transparent 55%),
+                                      var(--bg);
+               color:var(--ink); font-family:var(--font); }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:var(--max); margin:0 auto; padding: 22px 18px 64px; }
+
+    /* Top bar */
+    .top{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:14px; padding: 14px 0 10px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      min-width: 260px;
+    }
+    .brand img.icon{
+      width:44px; height:44px; object-fit:contain;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,.45));
+    }
+    .brand .name{
+      display:flex; flex-direction:column; line-height:1.05;
+    }
+    .brand .name strong{ font-size: 15px; letter-spacing:.3px; }
+    .brand .name span{ font-size: 12px; color:var(--muted); margin-top:4px; }
+
+    .nav{
+      display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .pill strong{ color: var(--ink); font-weight:600; }
+
+    /* Hero */
+    .hero{
+      margin-top: 10px;
+      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 0;
+    }
+    .heroLeft{
+      padding: 28px 26px;
+    }
+    .kicker{
+      display:inline-flex; align-items:center; gap:8px;
+      color: var(--gold);
+      font-weight: 700;
+      letter-spacing: .6px;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+    .kicker .dot{
+      width:8px; height:8px; border-radius:99px;
+      background: linear-gradient(90deg, var(--gold), var(--gold2));
+      box-shadow: 0 0 0 3px rgba(213,180,106,.14);
+    }
+    h1{
+      margin: 12px 0 10px;
+      font-size: 34px;
+      line-height: 1.08;
+      letter-spacing: .2px;
+    }
+    .sub{
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.55;
+      max-width: 58ch;
+    }
+    .ctaRow{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top: 14px;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding: 12px 14px;
       border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      max-width: 500px;
-      text-align: center;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      font-weight: 700;
+      letter-spacing:.2px;
+      cursor:pointer;
+      transition: transform .08s ease, background .12s ease, border-color .12s ease;
+      user-select:none;
     }
-    h1 {
+    .btn:hover{ transform: translateY(-1px); border-color: rgba(213,180,106,.35); background: rgba(213,180,106,.07); }
+    .btn.primary{
+      border-color: rgba(213,180,106,.45);
+      background: linear-gradient(90deg, rgba(213,180,106,.18), rgba(169,127,42,.14));
+    }
+    .btn small{ font-weight:600; color: var(--muted); letter-spacing:0; }
+
+    .heroRight{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      background:
+        radial-gradient(600px 320px at 60% 40%, rgba(213,180,106,.10), transparent 60%),
+        rgba(0,0,0,.25);
+      border-left: 1px solid var(--line);
+    }
+    .logoCard{
+      width: 100%;
+      max-width: 420px;
+      background: rgba(255,255,255,.02);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .logoCard img{
+      width:100%;
+      height:auto;
+      border-radius: 12px;
+      display:block;
+    }
+    .miniNote{
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* Sections */
+    .sections{
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .card{
+      background: rgba(255,255,255,.02);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px 18px;
+    }
+    .card h2{
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .card p{
       margin: 0 0 10px;
-      font-size: 28px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
     }
-    p {
-      margin: 8px 0;
-      color: #555;
+    ul{
+      margin: 10px 0 0 18px;
+      padding: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
     }
-    .tagline {
-      margin-top: 20px;
-      font-weight: 500;
-      color: #333;
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(213,180,106,.10);
+      border: 1px solid rgba(213,180,106,.28);
+      color: #f0e2c2;
+      font-weight:700;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    /* SEO block (human-readable, not spammy) */
+    .seo{
+      margin-top: 14px;
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.015);
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.75;
+    }
+    .seo strong{ color: var(--ink); }
+
+    /* Footer */
+    footer{
+      margin-top: 18px;
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      color: var(--muted);
+      font-size: 12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      justify-content:space-between;
+      align-items:flex-start;
+    }
+    footer .fine{
+      max-width: 78ch;
+      line-height: 1.55;
+    }
+
+    /* Responsive */
+    @media (max-width: 860px){
+      .heroGrid{ grid-template-columns: 1fr; }
+      .heroRight{ border-left:none; border-top: 1px solid var(--line); }
+      .sections{ grid-template-columns: 1fr; }
+      h1{ font-size: 30px; }
     }
   </style>
 </head>
+
 <body>
-  <div class="card">
-    <h1>Gregory C. Reynolds</h1>
-    <p>Maryland Real Estate Attorney</p>
-    <div class="tagline">
-      Life Estate Deeds · Family Transfers · Trust Deeds
+  <div class="wrap">
+    <div class="top">
+      <div class="brand">
+        <img class="icon" src="IconNEW.png" alt="Law Office icon" />
+        <div class="name">
+          <strong>Law Office of Gregory C. Reynolds</strong>
+          <span>Maryland Deed Preparation • Deed Drafting • Recording Support</span>
+        </div>
+      </div>
+
+      <!-- Placeholder nav pills for later “tabs” -->
+      <div class="nav" aria-label="Primary navigation">
+        <div class="pill"><strong>Deed Hub</strong> (Home)</div>
+        <div class="pill">Life Estate Deeds</div>
+        <div class="pill">Add / Remove Spouse</div>
+        <div class="pill">Family Transfers</div>
+        <div class="pill">Corrective Deeds</div>
+      </div>
     </div>
-    <p style="margin-top:25px; font-size:14px; color:#777;">
-      Website launching soon.
-    </p>
+
+    <section class="hero" aria-label="Hero">
+      <div class="heroGrid">
+        <div class="heroLeft">
+          <div class="kicker"><span class="dot"></span> Maryland Deed Hub</div>
+          <h1>Need to change a deed in Maryland?</h1>
+          <p class="sub">
+            If you’re looking for a <strong>Maryland deed attorney</strong> to handle a
+            <strong>life estate deed</strong>, <strong>family transfer deed</strong>, or to
+            <strong>add or remove a spouse from a deed</strong>, this is what I do.
+            Fast, clean, and built for real people who just want it done right.
+          </p>
+
+          <div class="ctaRow">
+            <a class="btn primary" href="tel:+14432230269" aria-label="Call Gregory Reynolds at 443-223-0269">
+              Call: 443-223-0269
+              <small>(cell)</small>
+            </a>
+            <a class="btn" href="mailto:gregory.reynolds@comcast.net?subject=Maryland%20Deed%20Help" aria-label="Email Gregory Reynolds">
+              Email: gregory.reynolds@comcast.net
+            </a>
+          </div>
+
+          <div class="badge">Primary focus: Deed Preparation in Maryland</div>
+
+          <p class="miniNote" style="margin-top:12px;">
+            Prefer email? Send the property address, county, current deed owner(s), and what you want to accomplish
+            (example: “remove ex-spouse,” “add spouse,” “transfer to child,” “life estate for parents”).
+          </p>
+        </div>
+
+        <div class="heroRight" aria-label="Logo">
+          <div class="logoCard">
+            <img src="NewFinal_Colour.jpeg" alt="Law Office of Gregory C. Reynolds logo" />
+            <div class="miniNote">
+              Deed work is provided solely through the <strong>Law Office of Gregory C. Reynolds</strong>.
+              I also serve as a settlement attorney with <strong>Lakeside Title</strong>—mentioned for credibility only.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sections" aria-label="Key info">
+      <div class="card">
+        <h2>Common deed work I handle</h2>
+        <p>These are the exact things people search for when they need deed help in Maryland:</p>
+        <ul>
+          <li><strong>Life estate deed</strong> (Maryland) for estate planning and family protection</li>
+          <li><strong>Add spouse to deed</strong> / <strong>remove spouse from deed</strong></li>
+          <li><strong>Family transfer deed</strong> (parent to child, child to parent, sibling transfers)</li>
+          <li><strong>Deed correction</strong> / <strong>corrective deed</strong> (name errors, legal description issues)</li>
+          <li><strong>Quitclaim deed</strong> and other deed types (case-by-case based on your goals)</li>
+          <li>Deeds to or from an <strong>LLC</strong> (including single-member LLC situations)</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>How it works (simple)</h2>
+        <p>
+          The goal is speed and accuracy: deed drafted, invoice/retainer handled, signatures arranged, then ready for recording.
+        </p>
+        <ul>
+          <li>You call or email what you want to do.</li>
+          <li>I confirm the best deed structure for your situation.</li>
+          <li>I draft the deed and send signature instructions.</li>
+          <li>Recording support is handled once signatures are complete.</li>
+        </ul>
+        <p style="margin-top:10px;">
+          If you want a “title company” style experience without the runaround, this page is designed to make it easy.
+        </p>
+      </div>
+    </section>
+
+    <section class="seo" aria-label="Search phrases in natural language">
+      <strong>Maryland Deed Preparation / Deed Drafting:</strong>
+      People find this page when searching phrases like <em>“change deed in Maryland,” “add spouse to deed Maryland,” “remove spouse from deed Maryland,”
+      “family transfer deed Maryland,” “life estate deed Maryland,” “corrective deed Maryland,” “quitclaim deed Maryland,” “deed attorney Maryland,”
+      “record deed Maryland land records,”</em> and <em>“title company deed work Maryland.”</em>
+      If that’s you, call <strong>443-223-0269</strong> or email <strong>gregory.reynolds@comcast.net</strong> and tell me exactly what you want done.
+      This is a deed-focused hub; general estate planning content can live on a separate page later.
+    </section>
+
+    <footer>
+      <div class="fine">
+        <strong>Important:</strong> Deed services are provided by the Law Office of Gregory C. Reynolds.
+        Mention of Lakeside Title is for background/credibility only and does not imply Lakeside Title is providing deed services.
+        This page is a prototype landing page and will evolve into a fuller “Deed Hub” with dedicated pages for deed types and FAQs.
+      </div>
+      <div>
+        <div><strong>Call:</strong> <a href="tel:+14432230269">443-223-0269</a></div>
+        <div><strong>Email:</strong> <a href="mailto:gregory.reynolds@comcast.net">gregory.reynolds@comcast.net</a></div>
+      </div>
+    </footer>
   </div>
 </body>
 </html>
