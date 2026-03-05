@@ -1,3 +1,15 @@
+You’re right — that version blew up the layout. I went **full-bleed without keeping your “content width” logic**, and your logo got shoved because I changed the header rules. Let’s fix it cleanly:
+
+* ✅ **Keep the nice hero layout + formatting box**
+* ✅ **Remove the haze/blur** (solid, crisp panel — no cloudy look)
+* ✅ **Bring back your logo (top-left)**
+* ✅ **Keep phone (top-right)**
+* ✅ **Keep hero image full width BUT cap the text content width so it doesn’t feel “too wide”**
+* ✅ **Email button visible**
+* ❌ Remove “Official Maryland Deed Hub”
+
+Replace your whole `index.html` with this:
+
 ```html
 <!doctype html>
 <html lang="en">
@@ -12,7 +24,8 @@
   <style>
     :root{
       --ink:#0b0b0d;
-      --panel:rgba(18,18,22,.82);
+      --panel:rgba(18,18,22,.92); /* solid, crisp */
+      --panelBorder:rgba(255,255,255,.12);
       --text:#f2f2f4;
       --muted:#c7c7ce;
       --gold:#caa85a;
@@ -32,13 +45,12 @@
         radial-gradient(900px 520px at 85% 20%, rgba(84,130,255,.12), transparent 55%),
         linear-gradient(180deg, #060607 0%, #0b0b0d 55%, #09090b 100%);
     }
-
     a{color:inherit; text-decoration:none}
 
-    /* Optional content width limiter (used below hero) */
+    /* content width (keeps it from feeling “too wide”) */
     .wrap{max-width:1180px; margin:0 auto; padding:0 18px}
 
-    /* ===== TOP BAR (full width) ===== */
+    /* ===== HEADER (logo left, phone right) ===== */
     header{
       position:sticky;
       top:0;
@@ -48,11 +60,10 @@
       border-bottom:1px solid var(--line);
     }
     .topbar{
-      width:100%;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      padding:12px 22px; /* full-width padding */
+      padding:12px 0;
       gap:14px;
     }
     .brand{
@@ -92,28 +103,20 @@
       gap:10px;
       padding:10px 14px;
       border-radius:999px;
-      background: linear-gradient(180deg, rgba(202,168,90,.20), rgba(202,168,90,.08));
-      border:1px solid rgba(202,168,90,.35);
+      background: rgba(18,18,22,.75);
+      border:1px solid rgba(255,255,255,.16);
       box-shadow: 0 14px 30px rgba(0,0,0,.35);
     }
-    .phone small{
-      font-weight:600;
-      color:var(--muted);
-      display:none;
-    }
-    @media (min-width: 860px){
-      .phone small{display:inline}
-    }
+    .phone a:hover{filter:brightness(1.06)}
 
-    /* ===== HERO (FULL BLEED, LEFT-TO-RIGHT) ===== */
+    /* ===== HERO (full width image, but text stays constrained) ===== */
     .hero{
       position:relative;
       width:100%;
-      /* gives it that big “law firm hero” feel */
       min-height:72vh;
       max-height:860px;
+      overflow:hidden;
     }
-
     .hero img{
       position:absolute;
       inset:0;
@@ -121,81 +124,50 @@
       height:100%;
       object-fit:cover;
       display:block;
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
-    /* dark gradient overlay for readability (this is the “2-line trick,” built in) */
+    /* dark overlay for readability (NOT hazy; just a clean gradient) */
     .hero::before{
       content:"";
       position:absolute;
       inset:0;
-      background:
-        linear-gradient(90deg,
-          rgba(0,0,0,.78) 0%,
-          rgba(0,0,0,.48) 42%,
-          rgba(0,0,0,.22) 68%,
-          rgba(0,0,0,.12) 100%);
+      background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.62) 0%,
+        rgba(0,0,0,.35) 40%,
+        rgba(0,0,0,.16) 70%,
+        rgba(0,0,0,.10) 100%
+      );
       pointer-events:none;
-    }
-
-    /* a tiny vignette to make it look more premium */
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background: radial-gradient(800px 520px at 25% 65%, rgba(0,0,0,.10), rgba(0,0,0,.55));
-      mix-blend-mode: multiply;
-      pointer-events:none;
-      opacity:.55;
     }
 
     .hero-inner{
       position:relative;
       height:100%;
       display:flex;
-      align-items:flex-end;
-      /* keep the text block aligned with your content width, while image stays full-bleed */
-      max-width:1180px;
-      margin:0 auto;
-      padding: 0 18px 34px;
+      align-items:flex-start; /* keep up top */
+      padding-top:34px;      /* controls “how high” */
     }
 
+    /* crisp panel box (NO blur, NO fog) */
     .hero-box{
+      margin-top:42px; /* pushes content down a touch like before */
       max-width:760px;
-      background: rgba(8,8,10,.40);
-      border:1px solid rgba(255,255,255,.12);
+      background: var(--panel);
+      border:1px solid var(--panelBorder);
       border-radius: 22px;
       padding:18px 18px 16px;
-      backdrop-filter: blur(10px);
       box-shadow: var(--shadow);
     }
 
-    .kicker{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      font-weight:900;
-      letter-spacing:.14em;
-      text-transform:uppercase;
-      font-size:12px;
-      color:rgba(242,242,244,.86);
-    }
-    .kicker .dot{
-      width:8px; height:8px; border-radius:99px;
-      background: var(--gold);
-      box-shadow: 0 0 0 4px rgba(202,168,90,.18);
-    }
-
     h1{
-      margin:10px 0 8px;
+      margin:0 0 8px;
       font-size: clamp(30px, 4vw, 52px);
       line-height:1.05;
       letter-spacing:-.02em;
     }
-    h1 em{
-      font-style:normal;
-      color:var(--gold);
-    }
+    h1 em{font-style:normal; color:var(--gold)}
 
     .sub{
       margin:0 0 14px;
@@ -217,22 +189,22 @@
       justify-content:center;
       padding:10px 14px;
       border-radius:12px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(18,18,22,.55);
+      border:1px solid rgba(255,255,255,.16);
+      background: rgba(18,18,22,.72);
       color: var(--text);
       font-weight:900;
     }
     .btn.primary{
-      background: linear-gradient(180deg, rgba(202,168,90,.28), rgba(202,168,90,.12));
-      border-color: rgba(202,168,90,.45);
+      background: linear-gradient(180deg, rgba(202,168,90,.30), rgba(202,168,90,.14));
+      border-color: rgba(202,168,90,.50);
+      color:#0b0b0d;
     }
     .btn:hover{filter:brightness(1.05)}
     .btn:active{transform: translateY(1px)}
 
-    /* ===== BELOW HERO (kept clean, not busy) ===== */
-    main{
-      padding: 18px 0 44px;
-    }
+    /* ===== BELOW HERO ===== */
+    main{ padding: 18px 0 44px; }
+
     .below{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
@@ -241,12 +213,12 @@
     }
     @media (max-width: 980px){
       .below{grid-template-columns: 1fr;}
-      .hero-inner{padding-bottom:24px;}
       .hero{min-height:66vh;}
+      .hero-box{margin-top:26px;}
     }
 
     .panel{
-      background: var(--panel);
+      background: rgba(18,18,22,.88);
       border:1px solid rgba(255,255,255,.10);
       border-radius: var(--radius);
       padding:18px;
@@ -310,37 +282,35 @@
 
 <body>
   <!--
-    Put these files in the SAME folder as this index.html:
-      - iconNEW.png            (your logo)
-      - baltimore harbour.png  (your Inner Harbor image)
+    Keep these files in the SAME folder as index.html:
+      - iconNEW.png
+      - baltimore harbour.png
   -->
 
   <header>
-    <div class="topbar">
-      <div class="brand">
-        <img src="iconNEW.png" alt="Law Office of Gregory C. Reynolds" />
-        <div class="name">
-          Law Office of<br/>Gregory C. Reynolds
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brand">
+          <img src="iconNEW.png" alt="Law Office of Gregory C. Reynolds" />
+          <div class="name">Law Office of<br/>Gregory C. Reynolds</div>
         </div>
-      </div>
 
-      <div class="phone">
-        <small>Call now:</small>
-        <a href="tel:4432230269" aria-label="Call 443-223-0269">443-223-0269</a>
+        <div class="phone">
+          <a href="tel:4432230269" aria-label="Call 443-223-0269">Call 443-223-0269</a>
+        </div>
       </div>
     </div>
   </header>
 
-  <!-- FULL-WIDTH HERO -->
   <section class="hero" aria-label="Baltimore Inner Harbor hero image">
     <img src="baltimore harbour.png" alt="Baltimore Inner Harbor" />
-    <div class="hero-inner">
+
+    <div class="wrap hero-inner">
       <div class="hero-box">
-        <div class="kicker"><span class="dot"></span> The Official Maryland Deed Hub</div>
-        <h1>Maryland <em>Deed</em> Preparation & Modifications</h1>
+        <h1>Maryland <em>Deed</em> Preparation &amp; Modifications</h1>
         <p class="sub">
-          Straightforward, attorney-prepared deed changes for Maryland property owners—focused on getting it done correctly,
-          and getting it recorded.
+          Attorney-prepared deed changes for Maryland property owners. Add or remove a spouse from deed,
+          life estate deeds, family transfers, and corrective deeds.
         </p>
         <div class="actions">
           <a class="btn primary" href="tel:4432230269">Call 443-223-0269</a>
@@ -354,15 +324,13 @@
     <div class="wrap">
       <div class="below">
         <div class="panel">
-          <h2>What we handle</h2>
+          <h2>Maryland Deed Preparation</h2>
           <p>
             If you need to change a deed in Maryland—adding or removing a spouse from a deed, making a family transfer,
-            correcting an error, or setting up a life estate deed—we prepare the deed and supporting paperwork
+            correcting an error, or creating a life estate deed—we prepare the deed and supporting paperwork
             so it’s ready for recording.
-            This page stays intentionally simple; detailed explanations will live on the section pages you’ll click into.
           </p>
 
-          <!-- Light SEO, not spammy -->
           <p style="margin-top:10px;">
             Common searches we help with: <b>Maryland deed modification</b>, <b>add spouse to deed Maryland</b>,
             <b>remove spouse from deed Maryland</b>, <b>life estate deed Maryland</b>, <b>family transfer deed Maryland</b>,
@@ -371,7 +339,7 @@
         </div>
 
         <div class="panel">
-          <h2>Popular deed services</h2>
+          <h2>Common Deed Services</h2>
           <ul class="list">
             <li>
               <div class="badge">1</div>
@@ -422,3 +390,5 @@
 </body>
 </html>
 ```
+
+If you want it **even less “boxy”** but still readable, tell me and I’ll make the hero panel **transparent but crisp** (no blur) — think “dark tint” instead of a box.
