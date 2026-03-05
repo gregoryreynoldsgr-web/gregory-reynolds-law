@@ -6,23 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Maryland Deed Preparation | Law Office of Gregory C. Reynolds</title>
 
-  <meta name="description" content="Maryland deed preparation attorney. Change a deed, add or remove spouse from deed, life estate deeds, family transfer deeds, corrective deeds, deeds to and from LLCs. Call 443-223-0269 or email gregory.reynolds@comcast.net." />
+  <meta name="description" content="Maryland deed preparation attorney. Change a deed, add or remove a spouse from deed, life estate deeds, family transfer deeds, corrective deeds, deeds to and from trust. Call 443-223-0269 or email gregory.reynolds@comcast.net." />
 
   <style>
     :root{
       --bg:#0b0b0d;
 
-      /* Panels slightly more transparent so the background shows through */
-      --panel:rgba(18,18,22,.70);
-      --panel2:rgba(18,18,22,.58);
+      /* Let the background show through a bit more */
+      --panel:rgba(18,18,22,.62);
+      --panel2:rgba(18,18,22,.52);
 
       --text:#f2f2f4;
       --muted:#c7c7ce;
       --gold:#caa85a;
-      --line:rgba(202,168,90,.22);
+      --line:rgba(202,168,90,.24);
       --shadow: 0 18px 50px rgba(0,0,0,.55);
       --radius: 18px;
-      --max: 1100px;
+      --max: 1120px;
+
+      --ring: 0 0 0 4px rgba(202,168,90,.18);
     }
 
     *{ box-sizing:border-box; }
@@ -31,14 +33,15 @@
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
       background:
-        radial-gradient(1200px 800px at 20% 10%, rgba(202,168,90,.14), transparent 55%),
-        radial-gradient(900px 600px at 85% 40%, rgba(202,168,90,.12), transparent 60%),
+        radial-gradient(1200px 800px at 18% 8%, rgba(202,168,90,.18), transparent 58%),
+        radial-gradient(900px 650px at 88% 42%, rgba(202,168,90,.16), transparent 62%),
+        radial-gradient(700px 520px at 40% 95%, rgba(202,168,90,.10), transparent 60%),
         var(--bg);
       color:var(--text);
       overflow-x:hidden;
     }
 
-    /* FULL-SCREEN WATERMARK BACKGROUND (more visible) */
+    /* FULL-SCREEN WATERMARK BACKGROUND (a touch more visible) */
     .watermark{
       position:fixed;
       inset:0;
@@ -47,25 +50,23 @@
       align-items:center;
       justify-content:center;
       pointer-events:none;
-
-      /* ↑ Increase this to show more logo */
-      opacity:.18;
-
-      filter: saturate(1.1) contrast(1.1) blur(.15px);
+      opacity:.22;
+      filter: saturate(1.05) contrast(1.08);
     }
     .watermark img{
-      width:min(1400px, 135vw);
+      width:min(1550px, 150vw);
       height:auto;
-      transform: rotate(-8deg);
+      transform: rotate(-9deg) translateY(10px);
       opacity:1;
     }
 
-    /* Lighter veil so watermark is visible but text still reads clean */
+    /* Softer veil so watermark shows without killing readability */
     .veil{
       position:fixed;
       inset:0;
       z-index:-1;
-      background: linear-gradient(180deg, rgba(0,0,0,.34), rgba(0,0,0,.58));
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.28), rgba(0,0,0,.62));
       pointer-events:none;
     }
 
@@ -73,46 +74,48 @@
       width:100%;
       max-width:var(--max);
       margin:0 auto;
-      padding: 34px 18px 60px;
+      padding: 26px 18px 64px;
     }
 
+    /* Header */
     header{
       display:flex;
       align-items:center;
       justify-content:space-between;
       gap:16px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .brand{
       display:flex;
       align-items:center;
       gap:12px;
-      min-width: 260px;
     }
     .brand .mini{
-      width:36px;
-      height:36px;
-      border-radius:10px;
-      background: rgba(202,168,90,.12);
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      background: rgba(202,168,90,.10);
       border:1px solid var(--line);
       display:grid;
       place-items:center;
       overflow:hidden;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 12px 28px rgba(0,0,0,.35);
     }
-    .brand .mini img{ width:26px; height:26px; object-fit:contain; }
+    .brand .mini img{ width:28px; height:28px; object-fit:contain; }
 
-    .brand .textblock{ line-height:1.05; }
+    .brand .textblock{ line-height:1.06; }
     .brand .name{
-      font-weight:800;
-      letter-spacing:.2px;
+      font-weight:900;
+      letter-spacing:.25px;
       font-size: 15px;
+      margin:0;
     }
     .brand .sub{
-      margin-top:4px;
+      margin-top:5px;
       color:var(--muted);
-      font-size: 12.5px;
+      font-size: 12.8px;
     }
 
     .top-cta{
@@ -128,26 +131,29 @@
       padding: 11px 14px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(18,18,22,.52);
+      background: rgba(18,18,22,.48);
       color: var(--text);
       text-decoration:none;
       box-shadow: 0 10px 24px rgba(0,0,0,.35);
-      font-weight:750;
+      font-weight:800;
       font-size: 14px;
       letter-spacing:.1px;
-      transition: transform .12s ease, background .12s ease;
-      backdrop-filter: blur(8px);
+      transition: transform .12s ease, background .12s ease, box-shadow .12s ease;
+      backdrop-filter: blur(10px);
+      will-change: transform;
     }
-    .btn:hover{ transform: translateY(-1px); background: rgba(18,18,22,.70); }
+    .btn:hover{ transform: translateY(-1px); background: rgba(18,18,22,.66); box-shadow: 0 14px 30px rgba(0,0,0,.42); }
     .btn.primary{
-      border-color: rgba(202,168,90,.45);
-      background: linear-gradient(180deg, rgba(202,168,90,.22), rgba(202,168,90,.10));
+      border-color: rgba(202,168,90,.52);
+      background: linear-gradient(180deg, rgba(202,168,90,.24), rgba(202,168,90,.10));
     }
-    .btn small{ color: var(--muted); font-weight:650; }
+    .btn:focus-visible{ outline:none; box-shadow: var(--ring), 0 14px 30px rgba(0,0,0,.42); }
+    .btn small{ color: var(--muted); font-weight:750; }
 
+    /* Hero */
     .hero{
       display:grid;
-      grid-template-columns: 1.2fr .8fr;
+      grid-template-columns: 1.18fr .82fr;
       gap:16px;
       align-items:stretch;
     }
@@ -158,41 +164,42 @@
       border-radius: var(--radius);
       box-shadow: var(--shadow);
       padding: 22px;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
 
     .hero h1{
       margin:0 0 10px;
       font-size: clamp(30px, 3.2vw, 44px);
       letter-spacing:.2px;
-      line-height:1.06;
+      line-height:1.04;
     }
     .hero p.lede{
       margin:0 0 16px;
       color: var(--muted);
       font-size: clamp(16px, 1.45vw, 19px);
-      line-height:1.45;
+      line-height:1.5;
       max-width: 62ch;
     }
 
     .tagline{
-      display:inline-flex;
+      display:flex;
       gap:10px;
       flex-wrap:wrap;
-      margin: 12px 0 18px;
+      margin: 12px 0 16px;
     }
     .pill{
-      border:1px solid rgba(202,168,90,.30);
-      background: rgba(0,0,0,.18);
+      border:1px solid rgba(202,168,90,.32);
+      background: rgba(0,0,0,.16);
       color: #f3e7c5;
       padding: 8px 10px;
       border-radius:999px;
       font-size: 13px;
-      font-weight:750;
+      font-weight:850;
+      letter-spacing:.1px;
     }
 
     .quicklist{
-      margin: 10px 0 0;
+      margin: 12px 0 0;
       padding:0;
       list-style:none;
       display:grid;
@@ -215,18 +222,61 @@
       flex:0 0 auto;
     }
 
+    .ctaRow{
+      margin-top:16px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    /* Right card: logo + no awkward blank */
     .logoCard{
       display:flex;
       flex-direction:column;
-      justify-content:space-between;
       gap:14px;
       background: var(--panel2);
+      padding: 18px;
     }
+
+    .logoTop{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      padding: 6px 6px 0; /* removes the “dead” feel at top */
+    }
+    .logoTop .mark{
+      width:44px;
+      height:44px;
+      border-radius:14px;
+      background: rgba(202,168,90,.10);
+      border:1px solid rgba(202,168,90,.22);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .logoTop .mark img{ width:30px; height:30px; object-fit:contain; }
+    .logoTop .words{
+      line-height:1.1;
+    }
+    .logoTop .words .w1{
+      font-weight:950;
+      letter-spacing:.2px;
+      font-size: 14.5px;
+      margin:0;
+    }
+    .logoTop .words .w2{
+      margin-top:4px;
+      color: rgba(199,199,206,.9);
+      font-size: 12.5px;
+    }
+
     .biglogo{
       width:100%;
       border-radius: 14px;
       border: 1px solid rgba(202,168,90,.18);
-      background: rgba(0,0,0,.22);
+      background: rgba(0,0,0,.18);
       padding: 14px;
       display:grid;
       place-items:center;
@@ -241,12 +291,14 @@
 
     .cred{
       font-size: 13px;
-      color: var(--muted);
-      line-height:1.35;
+      color: rgba(199,199,206,.92);
+      line-height:1.38;
       border-top: 1px solid rgba(202,168,90,.14);
       padding-top: 12px;
     }
+    .cred strong{ color: #fff; }
 
+    /* Lower grid */
     .grid2{
       display:grid;
       grid-template-columns: 1fr 1fr;
@@ -261,7 +313,7 @@
     .card p{
       margin:0;
       color: var(--muted);
-      line-height:1.5;
+      line-height:1.55;
       font-size: 15px;
     }
 
@@ -271,7 +323,7 @@
       border-top: 1px solid rgba(202,168,90,.14);
       color: rgba(199,199,206,.85);
       font-size: 13px;
-      line-height: 1.45;
+      line-height: 1.5;
     }
 
     @media (max-width: 900px){
@@ -279,7 +331,7 @@
       .top-cta{ justify-content:flex-start; }
       .hero{ grid-template-columns: 1fr; }
       .grid2{ grid-template-columns: 1fr; }
-      .watermark img{ width: 160vw; transform: rotate(-10deg); }
+      .watermark img{ width: 175vw; transform: rotate(-10deg) translateY(16px); }
     }
   </style>
 </head>
@@ -316,7 +368,8 @@
         <p class="lede">
           Clean, fast <strong>Maryland deed preparation</strong> when you need it done right:
           <strong>add or remove a name</strong>, handle a <strong>family transfer</strong>, create a
-          <strong>life estate deed</strong>, or fix an issue with a <strong>corrective deed</strong>.
+          <strong>life estate deed</strong>, prepare a <strong>deed to / from trust</strong>, or fix an issue with a
+          <strong>corrective deed</strong>.
         </p>
 
         <div class="tagline">
@@ -325,16 +378,16 @@
           <span class="pill">Life estate deed</span>
           <span class="pill">Family transfer deed</span>
           <span class="pill">Corrective deed</span>
-          <span class="pill">Deed to / from LLC</span>
+          <span class="pill">Deed to / from trust</span>
         </div>
 
         <ul class="quicklist">
           <li><span class="dot"></span><div><strong>Call or email</strong> the property address + what you want to do.</div></li>
-          <li><span class="dot"></span><div><strong>I draft the deed</strong> and send clear signature instructions.</div></li>
+          <li><span class="dot"></span><div><strong>I draft the deed</strong> and send clean signature instructions.</div></li>
           <li><span class="dot"></span><div><strong>Optional recording support</strong> after signatures are complete (Maryland land records).</div></li>
         </ul>
 
-        <div style="margin-top:16px; display:flex; gap:10px; flex-wrap:wrap;">
+        <div class="ctaRow">
           <a class="btn primary" href="tel:14432230269">Call now: 443-223-0269</a>
           <a class="btn" href="mailto:gregory.reynolds@comcast.net?subject=Deed%20Help%20-%20Maryland">Email for deed help</a>
         </div>
@@ -343,13 +396,24 @@
           <strong>Search terms people actually use:</strong>
           “change deed Maryland”, “deed preparation Maryland”, “deed drafting Maryland”, “add spouse to deed Maryland”,
           “remove name from deed Maryland”, “remove spouse from deed Maryland”, “life estate deed Maryland”,
-          “family transfer deed Maryland”, “corrective deed Maryland”, “quitclaim deed Maryland”, “transfer deed to LLC Maryland”.
+          “family transfer deed Maryland”, “corrective deed Maryland”, “quitclaim deed Maryland”, “deed to trust Maryland”.
           <br><br>
           (Homepage stays clean and magnetic. We’ll build separate service pages next.)
         </footer>
       </div>
 
       <div class="card logoCard">
+        <!-- No more awkward dead space: add a tight, classy top block -->
+        <div class="logoTop">
+          <div class="mark">
+            <img src="IconNEW.png" alt="">
+          </div>
+          <div class="words">
+            <div class="w1">Law Office of Gregory C. Reynolds</div>
+            <div class="w2">Deed drafting • ownership changes • Maryland guidance</div>
+          </div>
+        </div>
+
         <div class="biglogo">
           <img src="NewFinal_Colour.jpeg" alt="Law Office of Gregory C. Reynolds logo">
         </div>
@@ -366,8 +430,8 @@
         <h2>Deed services I handle</h2>
         <p>
           Life estate deeds (Maryland), adding a spouse to a deed, removing a spouse or other owner,
-          family property transfers, deeds to and from LLCs (including single-member LLC situations),
-          quitclaim deeds when appropriate, and corrective deeds to fix errors (names, legal description, prior deed issues).
+          family property transfers, deeds to and from trust, quitclaim deeds when appropriate,
+          and corrective deeds to fix errors (names, legal description, or prior deed issues).
         </p>
       </div>
 
