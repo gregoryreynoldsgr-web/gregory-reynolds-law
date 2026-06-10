@@ -233,30 +233,11 @@
     }
 
     .sub{
-      margin:0 0 16px;
+      margin:0 0 18px;
       color:rgba(242,242,244,.92);
       font-size:16px;
-      line-height:1.45;
-      max-width:64ch;
-    }
-
-    .services{
-      margin:0 0 18px;
-      padding:0;
-      list-style:none;
-      display:grid;
-      grid-template-columns:repeat(2,minmax(0,1fr));
-      gap:8px;
-    }
-
-    .services li{
-      padding:9px 10px;
-      border-radius:12px;
-      background:rgba(255,255,255,.07);
-      border:1px solid rgba(255,255,255,.11);
-      color:rgba(242,242,244,.92);
-      font-size:14px;
-      font-weight:700;
+      line-height:1.5;
+      max-width:66ch;
     }
 
     .actions{
@@ -290,13 +271,6 @@
 
     .btn:active{
       transform:translateY(1px);
-    }
-
-    .fineprint{
-      margin-top:14px;
-      color:rgba(199,199,206,.86);
-      font-size:13px;
-      line-height:1.45;
     }
 
     .corner-logo{
@@ -397,7 +371,6 @@
       }
 
       .hero-box{padding:17px}
-      .services{grid-template-columns:1fr}
 
       .actions{
         flex-direction:column;
@@ -455,7 +428,7 @@
             <img src="IconNEW.png" alt="The Law Office of Gregory C. Reynolds chess logo" />
           </div>
 
-
+```
       <div class="brand-copy">
         <div class="brand-name">The Law Office of Gregory C. Reynolds</div>
         <div class="brand-sub">Your Trusted Source for Maryland Deeds</div>
@@ -475,14 +448,14 @@
     </div>
   </div>
 </div>
-
+```
 
   </header>
 
   <section class="hero" aria-label="Baltimore Inner Harbor hero image">
     <img class="hero-bg" src="baltimore harbour.png" alt="Baltimore Inner Harbor" />
 
-
+```
 <div class="wrap hero-inner">
   <div class="hero-box">
     <h1>Maryland's <em>#1 Deed Hub</em></h1>
@@ -492,29 +465,17 @@
     </p>
 
     <p class="sub">
-      We prepare and promptly record all types of Maryland deeds, including adding or removing spouses, 
-      children, and other family members from title.
-      Have questions? Call or email us today. And ask us about Life Estate Deeds - our most popular estate planning tool, which allows you to 
-      maintain full control of your property during your lifetime, while seamlessly passing your property to your heirs upon your passing (and avoid probate).
-      
+      We prepare and promptly record all types of Maryland deeds, including adding or removing spouses, children, and other family members from title. Have questions? Call or email us today. And ask us about Life Estate Deeds - our most popular estate planning tool, which allows you to maintain full control of your property during your lifetime, while seamlessly passing your property to your heirs upon your passing (and avoid probate).
     </p>
 
-    <ul class="services" aria-label="Common Maryland deed services">
-      <li>Add spouse to deed</li>
-      <li>Remove spouse from deed</li>
-      <li>Life estate deeds</li>
-      <li>Family transfer deeds</li>
-      <li>Corrective deeds</li>
-      <li>Deed modifications</li>
-    </ul>
-
     <div class="actions">
-      <a class="btn primary" href="tel:4432230269">Call 443-223-0269</a>
-      <a class="btn" href="mailto:gregory.reynolds@comcast.net">Email Gregory Reynolds</a>
-    </div>
+      <a class="contact-card" href="tel:4432230269" aria-label="Call 443-223-0269">
+        <span class="contact-detail">Call 443-223-0269</span>
+      </a>
 
-    <div class="fineprint">
-      Maryland deed preparation by The Law Office of Gregory C. Reynolds.
+      <a class="contact-card" href="mailto:gregory.reynolds@comcast.net" aria-label="Email Gregory C. Reynolds, Esq.">
+        <span class="contact-detail">Email Gregory C. Reynolds, Esq.</span>
+      </a>
     </div>
   </div>
 </div>
@@ -524,7 +485,7 @@
 <footer>
   © <span id="y"></span> The Law Office of Gregory C. Reynolds • Maryland
 </footer>
-
+```
 
   </section>
 
