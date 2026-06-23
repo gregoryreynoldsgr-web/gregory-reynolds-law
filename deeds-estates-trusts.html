@@ -1,1 +1,509 @@
+Absolutely — paste this entire thing into `deeds-estates-trusts.html`. I matched the same format/style as your existing page. 
+
+```html
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maryland Trust and Estate Deeds | The Law Office of Gregory C. Reynolds</title>
+  <meta name="description" content="Maryland deed attorney for deeds to or from trusts and estates, including trustee deeds, personal representative deeds, estate transfers, and trust funding deeds." />
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root{
+      --text:#f2f2f4;
+      --muted:#c7c7ce;
+      --gold:#caa85a;
+      --panel:rgba(18,18,22,.92);
+      --panelBorder:rgba(255,255,255,.12);
+      --shadow:0 18px 50px rgba(0,0,0,.45);
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--text);
+      background:#060607;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .wrap{
+      max-width:1120px;
+      margin:0 auto;
+      padding:0 18px;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:linear-gradient(180deg, rgba(8,8,10,.96), rgba(10,10,12,.84));
+      border-bottom:1px solid rgba(202,168,90,.30);
+      backdrop-filter:blur(10px);
+    }
+
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:12px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:15px;
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:62px;
+      height:62px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:18px;
+      background:rgba(255,255,255,.055);
+      border:1px solid rgba(202,168,90,.32);
+      flex:0 0 auto;
+    }
+
+    .brand-mark img{
+      width:50px;
+      height:auto;
+      display:block;
+    }
+
+    .brand-name{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(18px,1.65vw,26px);
+      font-weight:700;
+      color:#ffffff;
+      white-space:nowrap;
+    }
+
+    .brand-sub{
+      margin-top:7px;
+      color:var(--gold);
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(13px,1.05vw,16px);
+      font-weight:700;
+      letter-spacing:.045em;
+    }
+
+    .contact-tabs{
+      display:flex;
+      gap:10px;
+      flex:0 0 auto;
+    }
+
+    .contact-card{
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      min-width:205px;
+      min-height:54px;
+      padding:9px 15px;
+      border-radius:14px;
+      background:rgba(202,168,90,.14);
+      border:1px solid rgba(202,168,90,.38);
+      box-shadow:0 14px 30px rgba(0,0,0,.32);
+    }
+
+    .contact-title{
+      color:var(--gold);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .contact-detail{
+      margin-top:4px;
+      color:#ffffff;
+      font-size:13.5px;
+      font-weight:800;
+      white-space:nowrap;
+    }
+
+    .hero{
+      padding:72px 0 48px;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.78), rgba(0,0,0,.56), rgba(0,0,0,.72)),
+        url("baltimore harbour.png") center/cover no-repeat;
+    }
+
+    .hero-card{
+      max-width:840px;
+      background:var(--panel);
+      border:1px solid var(--panelBorder);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow);
+    }
+
+    .eyebrow{
+      color:var(--gold);
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:10px;
+    }
+
+    h1{
+      margin:0 0 12px;
+      font-size:clamp(36px,5vw,60px);
+      line-height:1.02;
+      letter-spacing:-.025em;
+    }
+
+    h1 em{
+      color:var(--gold);
+      font-style:normal;
+    }
+
+    .lead{
+      margin:0;
+      color:rgba(242,242,244,.94);
+      font-size:18px;
+      line-height:1.55;
+      max-width:72ch;
+    }
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:20px;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:12px 16px;
+      border-radius:12px;
+      background:rgba(202,168,90,.16);
+      border:1px solid rgba(202,168,90,.42);
+      font-weight:900;
+      color:#fff;
+    }
+
+    main{
+      background:linear-gradient(180deg,#08080a,#111116);
+      padding:42px 0 58px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1.35fr .75fr;
+      gap:22px;
+      align-items:start;
+    }
+
+    .panel{
+      background:rgba(18,18,22,.92);
+      border:1px solid var(--panelBorder);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:0 14px 36px rgba(0,0,0,.30);
+    }
+
+    h2{
+      margin:0 0 12px;
+      color:#fff;
+      font-size:28px;
+      line-height:1.15;
+    }
+
+    h3{
+      margin:24px 0 9px;
+      color:var(--gold);
+      font-size:20px;
+    }
+
+    p{
+      color:rgba(242,242,244,.88);
+      line-height:1.62;
+      font-size:16px;
+      margin:0 0 14px;
+    }
+
+    ul{
+      margin:12px 0 18px;
+      padding-left:20px;
+      color:rgba(242,242,244,.88);
+      line-height:1.6;
+    }
+
+    li{margin-bottom:8px}
+
+    .side-card{
+      margin-bottom:16px;
+      background:rgba(202,168,90,.10);
+      border:1px solid rgba(202,168,90,.30);
+      border-radius:18px;
+      padding:18px;
+    }
+
+    .side-card strong{
+      display:block;
+      color:var(--gold);
+      margin-bottom:8px;
+      font-size:17px;
+    }
+
+    .logo-box{
+      text-align:center;
+      padding:22px;
+      background:rgba(255,255,255,.045);
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      margin-bottom:16px;
+    }
+
+    .logo-box img{
+      max-width:210px;
+      width:100%;
+      height:auto;
+      border-radius:10px;
+    }
+
+    .back-link{
+      display:inline-flex;
+      margin-bottom:18px;
+      color:var(--gold);
+      font-weight:900;
+    }
+
+    footer{
+      background:#060607;
+      border-top:1px solid rgba(202,168,90,.25);
+      padding:20px 18px;
+      text-align:center;
+      color:rgba(242,242,244,.68);
+      font-size:13px;
+    }
+
+    @media (max-width:900px){
+      .topbar{
+        flex-direction:column;
+        align-items:stretch;
+      }
+
+      .brand-name{
+        white-space:normal;
+      }
+
+      .contact-tabs{
+        flex-direction:column;
+      }
+
+      .contact-card{
+        width:100%;
+        min-width:0;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <a class="brand" href="Index.html">
+          <div class="brand-mark">
+            <img src="IconNEW.png" alt="The Law Office of Gregory C. Reynolds chess logo" />
+          </div>
+
+          <div>
+            <div class="brand-name">The Law Office of Gregory C. Reynolds</div>
+            <div class="brand-sub">Your Trusted Source for Maryland Deeds</div>
+          </div>
+        </a>
+
+        <div class="contact-tabs">
+          <a class="contact-card" href="tel:4432230269">
+            <span class="contact-title">Free Phone Consult</span>
+            <span class="contact-detail">Call 443-223-0269</span>
+          </a>
+
+          <a class="contact-card" href="mailto:gregory.reynolds@comcast.net">
+            <span class="contact-title">Deed Questions?</span>
+            <span class="contact-detail">Email Gregory C. Reynolds, Esq.</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-card">
+        <div class="eyebrow">Maryland Trust and Estate Deeds</div>
+        <h1>Deeds to and from <em>Estates or Trusts</em></h1>
+        <p class="lead">
+          We prepare and record Maryland deeds involving trusts, estates, trustees, and personal representatives, including trust funding deeds, trustee deeds, and estate-related transfers.
+        </p>
+
+        <div class="actions">
+          <a class="btn" href="tel:4432230269">Call 443-223-0269</a>
+          <a class="btn" href="mailto:gregory.reynolds@comcast.net">Email About Trust or Estate Deeds</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="wrap">
+      <a class="back-link" href="Index.html">‹ Back to Maryland Deed Hub</a>
+
+      <div class="grid">
+        <section class="panel">
+          <h2>Maryland Deeds Involving Trusts and Estates</h2>
+
+          <p>
+            Deeds involving trusts and estates must be prepared carefully. The deed needs to identify the correct parties, confirm the authority of the person signing, and match the purpose of the transfer.
+          </p>
+
+          <p>
+            These deeds often involve trustees, successor trustees, personal representatives, estates, beneficiaries, heirs, or property owners who want to place real estate into a revocable living trust.
+          </p>
+
+          <h3>Deeds into a Trust</h3>
+
+          <p>
+            Many Maryland homeowners create a revocable living trust as part of their estate plan. However, the trust only works properly for real estate if the property is actually transferred into the trust.
+          </p>
+
+          <p>
+            We prepare deeds transferring Maryland real estate from an individual owner, married couple, or other owner into a trust. This is commonly referred to as funding the trust.
+          </p>
+
+          <h3>Deeds from a Trust</h3>
+
+          <p>
+            Sometimes property needs to be transferred out of a trust. This may happen when a property is being sold, refinanced, distributed to a beneficiary, or transferred back to the original owner.
+          </p>
+
+          <p>
+            These deeds usually require the trustee to sign in the trustee’s official capacity. The deed should clearly show that the trustee is acting on behalf of the trust.
+          </p>
+
+          <h3>Trustee Deeds</h3>
+
+          <p>
+            A trustee deed is commonly used when real estate is owned by a trust and the trustee is transferring the property. The deed must properly identify the trust and the trustee’s authority to act.
+          </p>
+
+          <p>
+            This can include transfers by an original trustee, successor trustee, or trustee acting after the death or resignation of another trustee.
+          </p>
+
+          <h3>Personal Representative Deeds</h3>
+
+          <p>
+            When a Maryland property owner dies and the property must pass through an estate, the personal representative may need to sign a deed transferring the property.
+          </p>
+
+          <p>
+            Personal representative deeds are commonly used to transfer estate property to heirs, beneficiaries, purchasers, or others entitled to receive the property.
+          </p>
+
+          <h3>Estate Transfers and Beneficiary Deeds</h3>
+
+          <p>
+            Estate-related deeds can involve many different situations. Some transfers are made according to a Will. Others are made as part of estate administration, probate, sale of estate property, or distribution among heirs.
+          </p>
+
+          <p>
+            The deed should be prepared in a way that clearly explains the transfer and avoids confusion in the land records.
+          </p>
+
+          <h3>Common Trust and Estate Deed Situations</h3>
+
+          <ul>
+            <li>Transferring a home into a revocable living trust</li>
+            <li>Transferring property from a trust back to an individual</li>
+            <li>Trustee deeds signed by a current or successor trustee</li>
+            <li>Personal representative deeds from an estate</li>
+            <li>Estate transfers to heirs or beneficiaries</li>
+            <li>Deeds needed after the death of a property owner</li>
+            <li>Correcting or updating title after probate</li>
+          </ul>
+
+          <h3>Why these deeds should be handled carefully</h3>
+
+          <p>
+            Trust and estate deeds often require more than simply changing names on a deed. The authority of the signer, the wording of the deed, the identity of the grantor and grantee, and the purpose of the transfer all matter.
+          </p>
+
+          <p>
+            A properly prepared deed helps avoid delays, title issues, recording problems, and questions later when the property is sold or refinanced.
+          </p>
+
+          <div class="actions">
+            <a class="btn" href="tel:4432230269">Call for a Free Phone Consult</a>
+            <a class="btn" href="mailto:gregory.reynolds@comcast.net">Email Your Trust or Estate Deed Question</a>
+          </div>
+        </section>
+
+        <aside>
+          <div class="logo-box">
+            <img src="NewFinal_Colour.jpeg" alt="The Law Office of Gregory C. Reynolds logo" />
+          </div>
+
+          <div class="side-card">
+            <strong>Trust Funding Deeds</strong>
+            <p>We prepare Maryland deeds transferring real estate into revocable living trusts.</p>
+          </div>
+
+          <div class="side-card">
+            <strong>Trustee Deeds</strong>
+            <p>Deeds signed by trustees, successor trustees, or trustees transferring property from a trust.</p>
+          </div>
+
+          <div class="side-card">
+            <strong>Personal Representative Deeds</strong>
+            <p>Estate deeds signed by a Maryland personal representative during probate or estate administration.</p>
+          </div>
+
+          <div class="side-card">
+            <strong>Maryland Deed Hub</strong>
+            <p>Attorney prepared deeds for homeowners, trustees, estates, and families throughout Maryland.</p>
+          </div>
+
+          <div class="side-card">
+            <strong>Free Phone Consult</strong>
+            <p>Have a question about a trust or estate deed? Call 443-223-0269.</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    © <span id="y"></span> The Law Office of Gregory C. Reynolds • Trust and Estate Deeds
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+```
 
