@@ -30,7 +30,9 @@
       --shadow:0 18px 50px rgba(0,0,0,.45);
     }
 
-    *{box-sizing:border-box}
+    *{
+      box-sizing:border-box;
+    }
 
     html,body{
       height:100%;
@@ -38,7 +40,9 @@
     }
 
     body{
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      font-family:ui-sans-serif,system-ui,-apple-system,
+        Segoe UI,Roboto,Helvetica,Arial,
+        "Apple Color Emoji","Segoe UI Emoji";
       color:var(--text);
       background:#060607;
     }
@@ -58,7 +62,11 @@
       position:sticky;
       top:0;
       z-index:50;
-      background:linear-gradient(180deg, rgba(8,8,10,.94), rgba(10,10,12,.78));
+      background:linear-gradient(
+        180deg,
+        rgba(8,8,10,.94),
+        rgba(10,10,12,.78)
+      );
       border-bottom:1px solid rgba(202,168,90,.30);
       backdrop-filter:blur(10px);
       box-shadow:0 12px 30px rgba(0,0,0,.25);
@@ -88,7 +96,11 @@
       justify-content:center;
       border-radius:18px;
       background:
-        radial-gradient(circle at 30% 20%, rgba(202,168,90,.28), transparent 44%),
+        radial-gradient(
+          circle at 30% 20%,
+          rgba(202,168,90,.28),
+          transparent 44%
+        ),
         rgba(255,255,255,.055);
       border:1px solid rgba(202,168,90,.32);
       box-shadow:0 14px 30px rgba(0,0,0,.38);
@@ -148,7 +160,10 @@
       border:1px solid rgba(202,168,90,.38);
       box-shadow:0 14px 30px rgba(0,0,0,.32);
       color:#ffffff;
-      transition:transform .18s ease, background .18s ease, border-color .18s ease;
+      transition:
+        transform .18s ease,
+        background .18s ease,
+        border-color .18s ease;
     }
 
     .contact-card:hover{
@@ -313,7 +328,10 @@
       border:1px solid rgba(202,168,90,.46);
       box-shadow:0 14px 30px rgba(0,0,0,.34);
       color:#ffffff;
-      transition:transform .18s ease, background .18s ease, border-color .18s ease;
+      transition:
+        transform .18s ease,
+        background .18s ease,
+        border-color .18s ease;
     }
 
     .service-tab:hover{
@@ -337,7 +355,11 @@
       margin-left:12px;
     }
 
-    /* NEW MARYLAND TRANSFER ON DEATH DEED FEATURE */
+    /*
+      ==========================================
+      NEW TRANSFER ON DEATH DEED ANNOUNCEMENT
+      ==========================================
+    */
 
     .tod-announcement{
       display:flex;
@@ -345,81 +367,98 @@
       align-items:center;
       justify-content:center;
       text-align:center;
-      padding:4px 0 0;
+      padding:13px 12px 5px;
+      background:linear-gradient(
+        180deg,
+        rgba(12,5,8,.98),
+        rgba(70,8,16,.96)
+      );
+      border:2px solid #ff3434;
+      border-radius:15px;
+      box-shadow:
+        0 0 18px rgba(255,0,0,.45),
+        0 12px 28px rgba(0,0,0,.55);
     }
 
     .tod-announcement-text{
-      color:#ff3838;
-      font-size:20px;
+      color:#ff4040;
+      font-size:21px;
       font-weight:1000;
       line-height:1.2;
       letter-spacing:.025em;
+      -webkit-text-stroke:.35px #ffffff;
       text-shadow:
-        0 0 8px rgba(255,0,0,.55),
-        0 0 20px rgba(255,0,0,.30),
-        1px 2px 3px rgba(0,0,0,.9);
+        0 0 10px rgba(255,0,0,.85),
+        0 0 20px rgba(255,0,0,.45);
       animation:todFlash 1.4s ease-in-out infinite;
     }
 
     .tod-arrow{
       display:block;
-      color:#ff3838;
-      font-size:39px;
+      color:#ffffff;
+      font-size:44px;
       font-weight:900;
       line-height:1;
       margin-top:3px;
-      text-shadow:0 0 12px rgba(255,0,0,.6);
+      text-shadow:
+        0 0 10px #ff0000,
+        0 0 20px #ff0000;
       animation:todArrow 1.15s ease-in-out infinite;
     }
 
     .service-tab.tod-tab{
-      background:linear-gradient(135deg, rgba(100,8,17,.96), rgba(38,5,10,.96));
-      border:2px solid #ff4343;
+      background:linear-gradient(
+        135deg,
+        #a00d1b,
+        #510711
+      );
+      border:2px solid #ff5050;
       box-shadow:
-        0 0 0 1px rgba(255,70,70,.15),
-        0 0 20px rgba(255,0,0,.20),
-        0 14px 30px rgba(0,0,0,.38);
-      min-height:65px;
+        0 0 18px rgba(255,0,0,.50),
+        0 14px 30px rgba(0,0,0,.50);
+      min-height:70px;
     }
 
     .service-tab.tod-tab span{
-      font-size:16px;
+      font-size:17px;
       color:#ffffff;
+      font-weight:1000;
+      text-shadow:0 2px 4px rgba(0,0,0,.8);
     }
 
     .service-tab.tod-tab strong{
-      color:#ff6565;
-      font-size:24px;
+      color:#ffffff;
+      font-size:27px;
     }
 
     .service-tab.tod-tab:hover{
       transform:translateY(-2px);
-      background:linear-gradient(135deg, #96121d, #500a12);
-      border-color:#ff7777;
-      box-shadow:0 0 28px rgba(255,0,0,.35);
+      background:linear-gradient(
+        135deg,
+        #c71325,
+        #710a17
+      );
+      border-color:#ffffff;
+      box-shadow:0 0 30px rgba(255,0,0,.65);
     }
 
     @keyframes todFlash{
       0%,100%{
-        opacity:1;
         color:#ff4545;
-        text-shadow:0 0 10px rgba(255,0,0,.7);
+        text-shadow:0 0 14px rgba(255,0,0,1);
       }
       50%{
-        opacity:.35;
-        color:#ff9090;
-        text-shadow:0 0 3px rgba(255,0,0,.2);
+        color:#ffffff;
+        text-shadow:0 0 18px rgba(255,0,0,.8);
       }
     }
 
     @keyframes todArrow{
       0%,100%{
         transform:translateY(0);
-        opacity:1;
       }
       50%{
-        transform:translateY(8px);
-        opacity:.6;
+        transform:translateY(7px);
       }
     }
 
@@ -429,6 +468,12 @@
         animation:none;
       }
     }
+
+    /*
+      ==========================================
+      FOOTER AND CORNER LOGO
+      ==========================================
+    */
 
     .corner-logo{
       position:absolute;
@@ -456,10 +501,24 @@
       pointer-events:none;
     }
 
+    /*
+      ==========================================
+      RESPONSIVE DESIGN
+      ==========================================
+    */
+
     @media (max-width:1120px){
-      .brand-name{font-size:20px}
-      .brand-sub{font-size:13px}
-      .contact-card{min-width:190px}
+      .brand-name{
+        font-size:20px;
+      }
+
+      .brand-sub{
+        font-size:13px;
+      }
+
+      .contact-card{
+        min-width:190px;
+      }
 
       .service-tabs{
         width:255px;
@@ -472,7 +531,9 @@
     }
 
     @media (max-width:980px){
-      .topbar{align-items:flex-start}
+      .topbar{
+        align-items:flex-start;
+      }
 
       .brand-name,
       .brand-sub{
@@ -485,7 +546,9 @@
         gap:8px;
       }
 
-      .contact-card{min-width:210px}
+      .contact-card{
+        min-width:210px;
+      }
 
       .hero-inner{
         flex-direction:column;
@@ -497,7 +560,7 @@
         max-width:780px;
         flex:0 0 auto;
         display:grid;
-        grid-template-columns:repeat(2, minmax(0, 1fr));
+        grid-template-columns:repeat(2,minmax(0,1fr));
         margin-top:0;
       }
 
@@ -524,7 +587,9 @@
         border-radius:15px;
       }
 
-      .brand-mark img{width:38px}
+      .brand-mark img{
+        width:38px;
+      }
 
       .brand-name{
         font-size:17px;
@@ -543,8 +608,13 @@
         padding:8px 12px;
       }
 
-      .contact-title{font-size:10px}
-      .contact-detail{font-size:12.5px}
+      .contact-title{
+        font-size:10px;
+      }
+
+      .contact-detail{
+        font-size:12.5px;
+      }
 
       .hero{
         min-height:calc(100vh - 130px);
@@ -555,13 +625,17 @@
         padding-top:42px;
       }
 
-      .hero-box{padding:17px}
+      .hero-box{
+        padding:17px;
+      }
 
       .actions{
         flex-direction:column;
       }
 
-      .btn{width:100%}
+      .btn{
+        width:100%;
+      }
 
       .service-tabs{
         grid-template-columns:1fr;
@@ -588,7 +662,9 @@
         opacity:.78;
       }
 
-      footer{font-size:12px}
+      footer{
+        font-size:12px;
+      }
     }
 
     @media (max-width:560px){
@@ -597,8 +673,13 @@
         align-items:stretch;
       }
 
-      .brand{align-items:center}
-      .contact-tabs{width:100%}
+      .brand{
+        align-items:center;
+      }
+
+      .contact-tabs{
+        width:100%;
+      }
 
       .contact-card{
         width:100%;
@@ -617,57 +698,100 @@
         display:none;
       }
     }
+
   </style>
 </head>
 
 <body>
+
+  <!-- HEADER -->
 
   <header>
     <div class="wrap">
       <div class="topbar">
 
         <div class="brand">
+
           <div class="brand-mark">
-            <img src="IconNEW.png" alt="The Law Office of Gregory C. Reynolds chess logo" />
+            <img
+              src="IconNEW.png"
+              alt="The Law Office of Gregory C. Reynolds chess logo"
+            />
           </div>
 
           <div class="brand-copy">
-            <div class="brand-name">The Law Office of Gregory C. Reynolds</div>
-            <div class="brand-sub">Your Trusted Source for Maryland Deeds</div>
+            <div class="brand-name">
+              The Law Office of Gregory C. Reynolds
+            </div>
+
+            <div class="brand-sub">
+              Your Trusted Source for Maryland Deeds
+            </div>
           </div>
+
         </div>
 
         <div class="contact-tabs">
 
-          <a class="contact-card" href="tel:4432230269" aria-label="Free phone consult. Call 443-223-0269">
-            <span class="contact-title">Free Phone Consult</span>
-            <span class="contact-detail">Call 443-223-0269</span>
+          <a
+            class="contact-card"
+            href="tel:4432230269"
+            aria-label="Free phone consult. Call 443-223-0269"
+          >
+            <span class="contact-title">
+              Free Phone Consult
+            </span>
+            <span class="contact-detail">
+              Call 443-223-0269
+            </span>
           </a>
 
-          <a class="contact-card" href="mailto:gregory.reynolds@comcast.net" aria-label="Email Gregory C. Reynolds, Esq. with deed questions">
-            <span class="contact-title">Deed Questions?</span>
-            <span class="contact-detail">Email Gregory C. Reynolds, Esq.</span>
+          <a
+            class="contact-card"
+            href="mailto:gregory.reynolds@comcast.net"
+            aria-label="Email Gregory C. Reynolds, Esq. with deed questions"
+          >
+            <span class="contact-title">
+              Deed Questions?
+            </span>
+            <span class="contact-detail">
+              Email Gregory C. Reynolds, Esq.
+            </span>
           </a>
 
         </div>
+
       </div>
     </div>
   </header>
 
-  <section class="hero" aria-label="Maryland deed attorney homepage">
+  <!-- HERO SECTION -->
 
-    <img class="hero-bg" src="baltimore harbour.png" alt="Baltimore Inner Harbor" />
+  <section
+    class="hero"
+    aria-label="Maryland deed attorney homepage"
+  >
+
+    <img
+      class="hero-bg"
+      src="baltimore harbour.png"
+      alt="Baltimore Inner Harbor"
+    />
 
     <div class="wrap hero-inner">
 
+      <!-- MAIN HOMEPAGE CONTENT -->
+
       <div class="hero-box">
 
-        <h1>Maryland's <em>#1 Deed Hub</em></h1>
+        <h1>
+          Maryland's <em>#1 Deed Hub</em>
+        </h1>
 
         <p class="hero-tagline">
           Attorney Prepared. Fast. Affordable.<br>
           Fees as low as $350
-          <span style="font-size:0.60em; font-weight:600;">
+          <span style="font-size:0.60em;font-weight:600;">
             (Plus recording and processing fees)
           </span>
         </p>
@@ -675,84 +799,168 @@
         <div class="sub">
 
           <p class="indented">
-            The Law Office of Gregory C. Reynolds prepares and records all types of Maryland deeds, including deeds to add or remove a husband, wife, children, other family members, and deeds to/from a trust or estate. Every deed is attorney-prepared, carefully reviewed for accuracy, and promptly recorded in the Maryland Land Records.
+            The Law Office of Gregory C. Reynolds prepares
+            and records all types of Maryland deeds, including
+            deeds to add or remove a husband, wife, children,
+            other family members, and deeds to/from a trust
+            or estate. Every deed is attorney-prepared,
+            carefully reviewed for accuracy, and promptly
+            recorded in the Maryland Land Records.
           </p>
 
           <p class="indented">
-            <strong>NEW FOR MARYLAND IN 2026!</strong> Maryland now authorizes <strong>Transfer on Death Deeds (TOD Deeds)</strong>, an estate planning option that allows qualifying property owners to designate beneficiaries who will receive their real estate upon their death, without transferring ownership during their lifetime. A properly prepared and recorded Transfer on Death Deed can help your loved ones avoid probate of the property while allowing you to retain ownership and control during your lifetime.
+            <strong>NEW FOR MARYLAND IN 2026!</strong>
+            Maryland now authorizes
+            <strong>Transfer on Death Deeds (TOD Deeds)</strong>,
+            an estate planning option that allows qualifying
+            property owners to designate beneficiaries who
+            will receive their real estate upon their death,
+            without transferring ownership during their
+            lifetime. A properly prepared and recorded
+            Transfer on Death Deed can help your loved ones
+            avoid probate of the property while allowing
+            you to retain ownership and control during
+            your lifetime.
           </p>
 
           <p class="indented">
-            We also prepare <strong>Life Estate Deeds</strong>, another Maryland estate planning tool. Depending on how the deed is structured, a Life Estate Deed may allow you to retain substantial control of your property during your lifetime while arranging for its transfer to your chosen beneficiaries upon your passing, often avoiding probate.
+            We also prepare <strong>Life Estate Deeds</strong>,
+            another Maryland estate planning tool. Depending
+            on how the deed is structured, a Life Estate Deed
+            may allow you to retain substantial control of
+            your property during your lifetime while
+            arranging for its transfer to your chosen
+            beneficiaries upon your passing, often
+            avoiding probate.
           </p>
 
           <p class="indented">
-            Regardless of the type of Deed you are contemplating, we're here to help. We offer free consultations as well as clear, practical legal guidance to help you accomplish your Maryland deed needs quickly, accurately, and affordably.
+            Regardless of the type of Deed you are
+            contemplating, we're here to help. We offer
+            free consultations as well as clear, practical
+            legal guidance to help you accomplish your
+            Maryland deed needs quickly, accurately,
+            and affordably.
           </p>
 
         </div>
 
+        <!-- CONTACT BUTTONS -->
+
         <div class="actions">
 
-          <a class="contact-card" href="tel:4432230269" aria-label="Call 443-223-0269">
-            <span class="contact-detail">Call 443-223-0269</span>
+          <a
+            class="contact-card"
+            href="tel:4432230269"
+            aria-label="Call 443-223-0269"
+          >
+            <span class="contact-detail">
+              Call 443-223-0269
+            </span>
           </a>
 
-          <a class="contact-card" href="mailto:gregory.reynolds@comcast.net" aria-label="Email Gregory C. Reynolds, Esq.">
-            <span class="contact-detail">Email Gregory C. Reynolds, Esq.</span>
+          <a
+            class="contact-card"
+            href="mailto:gregory.reynolds@comcast.net"
+            aria-label="Email Gregory C. Reynolds, Esq."
+          >
+            <span class="contact-detail">
+              Email Gregory C. Reynolds, Esq.
+            </span>
           </a>
 
         </div>
 
       </div>
 
-      <nav class="service-tabs" aria-label="Maryland deed services">
+      <!-- RIGHT SIDE SERVICE TABS -->
 
-        <!-- NEW TRANSFER ON DEATH DEEDS ANNOUNCEMENT -->
+      <nav
+        class="service-tabs"
+        aria-label="Maryland deed services"
+      >
+
+        <!-- FLASHING TOD ANNOUNCEMENT -->
+
         <div class="tod-announcement">
+
           <span class="tod-announcement-text">
             Maryland's Newest Deed!
           </span>
-          <span class="tod-arrow" aria-hidden="true">↓</span>
+
+          <span
+            class="tod-arrow"
+            aria-hidden="true"
+          >
+            ↓
+          </span>
+
         </div>
 
-        <!-- FIRST SERVICE TAB -->
-        <a class="service-tab tod-tab" href="transfer-on-death-deeds.html">
+        <!-- NEW FIRST TAB -->
+
+        <a
+          class="service-tab tod-tab"
+          href="transfer-on-death-deeds.html"
+        >
           <span>Transfer on Death Deeds</span>
           <strong>›</strong>
         </a>
 
-        <a class="service-tab" href="spouse-deeds.html">
+        <!-- EXISTING SERVICE TABS -->
+
+        <a
+          class="service-tab"
+          href="spouse-deeds.html"
+        >
           <span>Spouse Deeds</span>
           <strong>›</strong>
         </a>
 
-        <a class="service-tab" href="add-child-to-title.html">
+        <a
+          class="service-tab"
+          href="add-child-to-title.html"
+        >
           <span>Add a Child to Title</span>
           <strong>›</strong>
         </a>
 
-        <a class="service-tab" href="life-estate-deeds.html">
+        <a
+          class="service-tab"
+          href="life-estate-deeds.html"
+        >
           <span>Life Estate Deeds</span>
           <strong>›</strong>
         </a>
 
-        <a class="service-tab" href="deeds-estates-trusts.html">
+        <a
+          class="service-tab"
+          href="deeds-estates-trusts.html"
+        >
           <span>Deeds to/from Estates or Trusts</span>
           <strong>›</strong>
         </a>
 
-        <a class="service-tab" href="corrective-deeds.html">
+        <a
+          class="service-tab"
+          href="corrective-deeds.html"
+        >
           <span>Corrective Deeds</span>
           <strong>›</strong>
         </a>
 
-        <a class="service-tab" href="our-fees.html">
+        <a
+          class="service-tab"
+          href="our-fees.html"
+        >
           <span>FEE SCHEDULE</span>
           <strong>›</strong>
         </a>
 
-        <a class="service-tab" href="about-gregory-c-reynolds.html">
+        <a
+          class="service-tab"
+          href="about-gregory-c-reynolds.html"
+        >
           <span>About Gregory C. Reynolds, Esq.</span>
           <strong>›</strong>
         </a>
@@ -761,18 +969,27 @@
 
     </div>
 
-    <img class="corner-logo" src="NewFinal_Colour.jpeg" alt="The Law Office of Gregory C. Reynolds logo" />
+    <!-- CORNER LOGO -->
+
+    <img
+      class="corner-logo"
+      src="NewFinal_Colour.jpeg"
+      alt="The Law Office of Gregory C. Reynolds logo"
+    />
+
+    <!-- FOOTER -->
 
     <footer>
-      © <span id="y"></span> The Law Office of Gregory C. Reynolds • Maryland
+      © <span id="y"></span>
+      The Law Office of Gregory C. Reynolds • Maryland
     </footer>
 
   </section>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
+    document.getElementById("y").textContent =
+      new Date().getFullYear();
   </script>
 
 </body>
 </html>
-
