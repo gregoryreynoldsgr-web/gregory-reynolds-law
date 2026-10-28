@@ -30,9 +30,7 @@
       --shadow:0 18px 50px rgba(0,0,0,.45);
     }
 
-    *{
-      box-sizing:border-box;
-    }
+    *{box-sizing:border-box}
 
     html,body{
       height:100%;
@@ -96,11 +94,8 @@
       justify-content:center;
       border-radius:18px;
       background:
-        radial-gradient(
-          circle at 30% 20%,
-          rgba(202,168,90,.28),
-          transparent 44%
-        ),
+        radial-gradient(circle at 30% 20%,
+          rgba(202,168,90,.28),transparent 44%),
         rgba(255,255,255,.055);
       border:1px solid rgba(202,168,90,.32);
       box-shadow:0 14px 30px rgba(0,0,0,.38);
@@ -160,8 +155,7 @@
       border:1px solid rgba(202,168,90,.38);
       box-shadow:0 14px 30px rgba(0,0,0,.32);
       color:#ffffff;
-      transition:
-        transform .18s ease,
+      transition:transform .18s ease,
         background .18s ease,
         border-color .18s ease;
     }
@@ -328,8 +322,7 @@
       border:1px solid rgba(202,168,90,.46);
       box-shadow:0 14px 30px rgba(0,0,0,.34);
       color:#ffffff;
-      transition:
-        transform .18s ease,
+      transition:transform .18s ease,
         background .18s ease,
         border-color .18s ease;
     }
@@ -355,11 +348,9 @@
       margin-left:12px;
     }
 
-    /*
-      ==========================================
-      NEW TRANSFER ON DEATH DEED ANNOUNCEMENT
-      ==========================================
-    */
+    /* =====================================
+       NEW TOD DEED ANNOUNCEMENT
+       ===================================== */
 
     .tod-announcement{
       display:flex;
@@ -407,11 +398,7 @@
     }
 
     .service-tab.tod-tab{
-      background:linear-gradient(
-        135deg,
-        #a00d1b,
-        #510711
-      );
+      background:linear-gradient(135deg,#a00d1b,#510711);
       border:2px solid #ff5050;
       box-shadow:
         0 0 18px rgba(255,0,0,.50),
@@ -433,11 +420,7 @@
 
     .service-tab.tod-tab:hover{
       transform:translateY(-2px);
-      background:linear-gradient(
-        135deg,
-        #c71325,
-        #710a17
-      );
+      background:linear-gradient(135deg,#c71325,#710a17);
       border-color:#ffffff;
       box-shadow:0 0 30px rgba(255,0,0,.65);
     }
@@ -462,6 +445,57 @@
       }
     }
 
+    /* =====================================
+       FEATURED POPULAR DEED SERVICES
+       ===================================== */
+
+    .service-tab.popular-tab{
+      background:linear-gradient(
+        135deg,
+        #42341a,
+        #171411
+      );
+      border:2px solid #e4bc63;
+      box-shadow:
+        0 0 14px rgba(202,168,90,.35),
+        0 12px 25px rgba(0,0,0,.4);
+      min-height:67px;
+    }
+
+    .service-tab.popular-tab span{
+      font-size:17px;
+      color:#ffffff;
+      font-weight:900;
+    }
+
+    .service-tab.popular-tab strong{
+      color:#f2ce80;
+      font-size:27px;
+    }
+
+    .popular-label{
+      display:block;
+      color:#f2ce80;
+      font-size:11px;
+      font-weight:800;
+      margin-top:5px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+    }
+
+    .service-tab.popular-tab:hover{
+      transform:translateY(-2px);
+      background:linear-gradient(
+        135deg,
+        #594521,
+        #272017
+      );
+      border-color:#ffe19b;
+      box-shadow:
+        0 0 23px rgba(202,168,90,.50),
+        0 14px 30px rgba(0,0,0,.45);
+    }
+
     @media (prefers-reduced-motion:reduce){
       .tod-announcement-text,
       .tod-arrow{
@@ -469,11 +503,9 @@
       }
     }
 
-    /*
-      ==========================================
-      FOOTER AND CORNER LOGO
-      ==========================================
-    */
+    /* =====================================
+       FOOTER AND CORNER LOGO
+       ===================================== */
 
     .corner-logo{
       position:absolute;
@@ -501,24 +533,14 @@
       pointer-events:none;
     }
 
-    /*
-      ==========================================
-      RESPONSIVE DESIGN
-      ==========================================
-    */
+    /* =====================================
+       RESPONSIVE DESIGN
+       ===================================== */
 
     @media (max-width:1120px){
-      .brand-name{
-        font-size:20px;
-      }
-
-      .brand-sub{
-        font-size:13px;
-      }
-
-      .contact-card{
-        min-width:190px;
-      }
+      .brand-name{font-size:20px}
+      .brand-sub{font-size:13px}
+      .contact-card{min-width:190px}
 
       .service-tabs{
         width:255px;
@@ -527,6 +549,10 @@
 
       .tod-announcement-text{
         font-size:18px;
+      }
+
+      .service-tab.popular-tab span{
+        font-size:16px;
       }
     }
 
@@ -651,6 +677,10 @@
       }
 
       .service-tab.tod-tab span{
+        font-size:16px;
+      }
+
+      .service-tab.popular-tab span{
         font-size:16px;
       }
 
@@ -897,7 +927,7 @@
 
         </div>
 
-        <!-- NEW FIRST TAB -->
+        <!-- NEW TOD DEED TAB -->
 
         <a
           class="service-tab tod-tab"
@@ -907,23 +937,37 @@
           <strong>›</strong>
         </a>
 
-        <!-- EXISTING SERVICE TABS -->
+        <!-- FEATURED POPULAR SERVICE -->
 
         <a
-          class="service-tab"
+          class="service-tab popular-tab"
           href="spouse-deeds.html"
         >
-          <span>Spouse Deeds</span>
+          <span>
+            Spouse Deeds
+            <small class="popular-label">
+              POPULAR SERVICE
+            </small>
+          </span>
           <strong>›</strong>
         </a>
 
+        <!-- FEATURED POPULAR SERVICE -->
+
         <a
-          class="service-tab"
+          class="service-tab popular-tab"
           href="add-child-to-title.html"
         >
-          <span>Add a Child to Title</span>
+          <span>
+            Add a Child to Title
+            <small class="popular-label">
+              POPULAR SERVICE
+            </small>
+          </span>
           <strong>›</strong>
         </a>
+
+        <!-- REMAINING SERVICES -->
 
         <a
           class="service-tab"
